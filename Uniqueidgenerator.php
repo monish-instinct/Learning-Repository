@@ -1,3 +1,4 @@
+// Unique id generator
 $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
 $charactersLength = strlen($characters);
 $coder = '';
