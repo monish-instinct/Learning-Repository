@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,16 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="loader">
+    <div class="loadercenter">
+      <div class="loaderring"></div>
+      <span id="loader">Loading...</span>
+  </div>
+  </div>
 <div>
   <div class="nav">
     <input id="nav-toggle" type="checkbox">
     <div class="logo"><img src="https://cdn-icons-png.flaticon.com/512/4660/4660617.png" class="iconDetails"><a onclick="home_refresh_main()" id="instinct_main_logo">INSTINCT</a></div>
     <ul class="links">
-        <li><a href="#" onclick="home_refresh_main();instinct_call();">HOME</a></li>	
-        <li><a href="#">CAMPUS</a></li>
-        <li><a href="#">ACADEMIC LIFE</a></li>
-        <li><a href="#">INFRASTRUCTURE</a></li>
-        <li><a onclick="applicationform()">APPLY NOW 2022</a></li>
+        <li><a  id="home" onclick="home_refresh_main();instinct_call();">HOME</a></li>	
+        <li><a>CAMPUS</a></li>
+        <li><a>ACADEMIC LIFE</a></li>
+        <li><a>INFRASTRUCTURE</a></li>
+        <li><a onclick="applicationform()" id="apply">APPLY NOW 2022</a></li>
     </ul>
       <label for="nav-toggle" class="icon-burger" >
         <div class="line"></div>
@@ -148,7 +153,6 @@
 <!-- Student Login -->
 <div id="student_login" style="display:none" class="student_login">
   <form id="stdreset">
-  <body style="background: #262626">
     <div class="login_container">
       <h1 class = "login_signinh1">Sign in</h1>
      <div class="login_centre">
@@ -161,9 +165,9 @@
 </div>
 </div>
 </div>
+</body>
 <!-- Teacher Login -->
 <div id="teacher_login" style="display:none" class="teacher_login">
-  <body style="background: #262626">
     <div class="login_container">
       <h1 class = "login_signinh1">Sign in</h1>
      <div class="login_centre">
@@ -177,7 +181,6 @@
 </div>
 <!-- Developers Zone  -->
 <div id="developer_login" style="display:none" class="developer_login">
-  <body style="background: #262626">
     <div class="login_container">
       <h1 class = "login_signinh1">Sign in</h1>
      <div class="login_centre">
@@ -191,7 +194,6 @@
 </div>
 <!-- Admin  -->
 <div id="admin_login" style="display:none" class="admin_login">
-  <body style="background: #262626">
     <div class="login_container">
       <h1 class = "login_signinh1">Sign in</h1>
      <div class="login_centre">
@@ -203,24 +205,25 @@
 </div>
 </div>
 </div>
+
 <!-- Footer side -->
 <div class="footer">
   <div class="social">
       <a href="https://youtu.be/WuEH265pUy4"id='yt'><i class="fab fa-youtube"></i></a>
+      <a href="https://github.com/Instinctcms" id='git'><i class="fa-brands fa-github"></i></a>
       <a href="https://www.instagram.com/monish_instinct/" id='insta'><i class="fab fa-instagram"></i></a>
       <a href="https://twitter.com/monish_instinct" id='twitter'><i class="fab fa-twitter"></i></a>
-      <a href="https://www.facebook.com/login/" id='fb'><i class="fab fa-facebook-f"></i></a>
   </div>
 
   <ul class="list">
       <li>
-          <a href="#" onclick="home_refresh_main()">Home</a>
+          <a onclick="home_refresh_main()">Home</a>
       </li>
       <li>
-          <a href="#">Services</a>
+          <a>Contact</a>
       </li>
       <li>
-          <a href="#">About</a>
+          <a>About</a>
       </li>
       <li>
           <a href="https://www.termsandconditionsgenerator.com/live.php?token=1FRXb6FdZcslo7I3O39WeycTiOAM7k9H">Terms</a>
@@ -234,7 +237,31 @@
   </p>
 </div>
 </body>
-<script>  
+<script type="text/javascript">
+var instinctid= '';
+var characters= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+var charactersLength = characters.length;
+for ( var i = 0; i < 6; i++ ) {
+  instinctid += characters.charAt(Math.floor(Math.random() *charactersLength));
+       }
+
+
+$(document).ready(function () {
+          $("#homepage").hide();
+          $("#homepage").delay(2000).fadeIn(500);
+          $("#loader").show().delay(1999).fadeOut();
+      });
+      $(document).ready(function () {
+          $(".nav").hide();
+          $(".nav").delay(2000).fadeIn(500);
+          $("#loader").show().delay(1999).fadeOut();
+      });
+      $(document).ready(function () {
+          $(".footer").hide();
+          $(".footer").delay(2000).fadeIn(500);
+          $("#loader").show().delay(1999).fadeOut();
+      });
+
 var letters = /^[a-zA-Z\s]*$/;
 var date= /^\d{4}[./-]\d{2}[./-]\d{2}$/;
 
@@ -306,8 +333,8 @@ data:{studentid:stdid,password:stdpass},
     document.getElementById("developer_login").style.display="none";
     document.getElementById("admin_login").style.display="none";
   }
-var result=''
-  function div1(){
+var result='';
+function div1(){
     let firstname=fn.value;
     let lastname=ln.value;
     document.getElementById("register_form_div1").style.display="block";
@@ -458,8 +485,8 @@ var result=''
         var surname= ln.value;
         var date= dob.value;
         var gender= gen.value;
-        $.ajax({url: "registerdiv1.php", type:"POST",
-      data:{fn:name,ln:surname,dob:date,gender:gender},
+        $.ajax({url: "qwerty.php", type:"POST",
+      data:{fn:name,ln:surname,dob:date,gender:gender,instinct:'applynowdiv1'},
           success: function(output){
             result=output
         }
@@ -507,48 +534,24 @@ var result=''
   
   function div2(){
     document.getElementById("register_form_div2").style.display="block";
+    let fathername=father.value;
+    let mothername=mother.value;
     if(father.value==''){
       document.getElementById("fathername").innerHTML = "This field is required";
       document.getElementById("fathername").style.display="block";
     }
     else if(mother.value==''){
-      if(father.value!=''){
-        if(father.value.match(letters)){
-      document.getElementById("fathername").style.display="none";
-        }
-        else{
-      document.getElementById("fathername").innerHTML = "Name should contain only letters";
-      document.getElementById("fathername").style.display="block";
-    }}
-      if(mother.value==''){
       document.getElementById("mothername").innerHTML = "This field is required";
       document.getElementById("mothername").style.display="block";
     }
-    }
-    else if(mother.value!=''){
-        if(mother.value.match(letters)){
-      document.getElementById("mothername").style.display="none";
-    }
-        else{
-      document.getElementById("mothername").innerHTML = "Name should contain only letters";
-      document.getElementById("mothername").style.display="block";
-    }}
     else{
-      if(father.value.match(letters) && mother.value.match(letters)){
-        if(father.value!="" && mother.value!=""){
-          var name= fn.value;
-          var surname= ln.value;
-          var date= dob.value;
-          var gender= gen.value;
-          var fathername= father.value;
-          var mothername= mother.value;
+      if(father.value!="" && mother.value!=""){
           var spousename= spouse.value;
           var sibling= siblings.value;
           var children= child.value;
           var phno= result;
-
-      $.ajax({url: "registerdiv2.php", type:"POST",
-      data:{fn:name,ln:surname,dob:date,gender:gender,father:fathername,mother:mothername,spouse:spousename,siblings:sibling,child:children,result:phno},
+      $.ajax({url: "qwerty.php", type:"POST",
+      data:{father:fathername,mother:mothername,spouse:spousename,siblings:sibling,child:children,phno:result,instinct:'applynowdiv2'},
           success: function(output){
         }})
 
@@ -566,27 +569,8 @@ var result=''
             spouse.value=''
             siblings.value=''
             child.value=''
-          }
-    }
-    else{
-      if(father.value!=''){
-        if(father.value.match(letters)){
-      document.getElementById("fathername").style.display="none";
-    }}
-    else{
-      document.getElementById("fathername").innerHTML = "Name should contain only letters";
-      document.getElementById("fathername").style.display="block";
-    }
-    if(mother.value!=''){
-        if(mother.value.match(letters)){
-      document.getElementById("mothername").style.display="none";}}
-    else{
-      document.getElementById("mothername").innerHTML = "Name should contain only letters";
-      document.getElementById("mothername").style.display="block";
-    }
-    }
-  }
-  }
+          }}}
+
   function home_refresh_main(){
     $(".homepage").fadeIn("slow");
     document.getElementById("homepage").style.display="block";
@@ -709,7 +693,7 @@ var result=''
 .nav .icon-burger {
 	display: none;
 	position: absolute;
-	right: 7%;
+	right: 5%;
 	top: 50%;
 	transform: translateY(-50%);}
 .nav .icon-burger .line {
@@ -764,7 +748,7 @@ var result=''
 	.nav :checked ~ .icon-burger .line:nth-child(2) {
 		opacity: 0;}}
 
-@media screen and (max-width: 1000px) and (min-width: 290px){
+@media screen and (max-width: 1054px) and (min-width: 290px){
 	.nav .logo {
 		float: none;
 		width: auto;
@@ -857,6 +841,55 @@ var result=''
     width: 92%;
   }
 }
+@media all and (max-width: 395px) and (min-width: 376px){
+  .homepage_logo{
+    width: 64px;
+    }
+    .in {
+    padding-left: 78px;}
+  }
+  @media all and (max-width: 361px) and (min-width: 359px){
+  .homepage_logo{
+    width: 57px;
+    }}
+    @media all and (max-width: 412px) and (min-width: 411px){
+  .homepage_logo{
+    width: 71px;
+    }
+    .in {
+    padding-left: 78px;}}
+  @media all and (max-width: 820px) and (min-width: 819px){
+      .in {
+    width: 129%;
+    height: 14.5%;
+    transform: translate(-10.5%, 30%);
+}
+.homepage_logo{
+    width: 72px;
+    }
+} 
+  @media all and (max-width: 1025px) and (min-width: 1023px){
+    .homepage_logo{
+    width: 45px;
+    }
+  }
+  @media all and (max-width: 281px) and (min-width: 279px){
+    .in {
+    padding-left: 67px;
+    width: 100%;
+    transform: translate(0.3%, 30%);
+}
+.homepage_logo{
+    left: 20px;
+    }
+  }
+  @media all and (max-width: 415px) and (min-width: 413px){
+    .homepage_logo{
+    width: 70px;
+    }
+    .in {
+    padding-left: 80px;}
+  }
 #pos{
  position: relative;
  top: 20%;
@@ -1342,15 +1375,19 @@ var result=''
     
     #yt:hover{
       color: red;
+      cursor: pointer;
     }
     #insta:hover{
       color: purple;
+      cursor: pointer;
     }
     #twitter:hover{
       color: rgb(33, 163, 206);
+      cursor: pointer;
     }
-    #fb:hover{
-      color: blue;
+    #git:hover{
+      color: black;
+      cursor: pointer;
     }
     .footer .copyright{
         margin-top: 15px;
@@ -1366,6 +1403,59 @@ var result=''
  }
 .footer{
   top: 90%;
-}
-}
+}}
+
+/* Loader */
+    .loadercenter{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .loaderring{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        animation: loaderring 2s linear infinite;
+    }
+    @keyframes loaderring {
+       0%{
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #e65c00;
+       } 
+       50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #18b201;
+       } 
+       100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+       } 
+    }
+    .loaderring:before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(255,255,255,.3);
+    }
+    #loader{
+        color: #737373;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 200px;
+        animation: text 3s ease-in-out infinite;
+    }
+    @keyframes text {
+        50%{
+            color: #262626;
+        }
+    }
 </style>
