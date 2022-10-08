@@ -123,8 +123,6 @@ def click_insert():
     #This is for button
     button=tk.Button(window,text='Submit',height=2,borderwidth=5,relief='solid',width=10,activebackground='azure2',command=command,cursor='hand2')
     button.place(x=550,y=850)
-
-    #This is for button
     button=tk.Button(window,text='<<<',height=1,borderwidth=2,relief='solid',width=5,activebackground='azure2',command=window.destroy,cursor='hand2')
     button.place(x=100,y=50)
         
