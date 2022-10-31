@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
+<div style="display: none;">
   <div id="loader">
     <div class="loadercenter">
-      <div class="loaderring"></div>
+      <div class="loadinstinct"></div>
       <span id="loader">Loading...</span>
   </div>
-  </div>
-<div>
+  </div></div>
+<div id="navigation" style="display: none;">
   <div class="nav">
     <input id="nav-toggle" type="checkbox">
     <div class="logo"><img src="https://cdn-icons-png.flaticon.com/512/4660/4660617.png" class="iconDetails"><a onclick="home_refresh_main()" id="instinct_main_logo">INSTINCT</a></div>
@@ -39,175 +41,150 @@
 </div>
 <!-- Home Page -->
 <div>
-<div id="homepage" style="display: block;" class="homepage">
+<div id="homepage" style="display: none;" class="homepage">
   <div class="home_container">
-    <button class="in" name= "submit" onclick="hometostdlogin()"><img src="https://cdn-icons-png.flaticon.com/512/2641/2641333.png" class="homepage_logo">STUDENTS ZONE</button><br>
-    <button class="in" name= "submit" onclick="hometoteacherlogin()"><img src="https://cdn-icons-png.flaticon.com/512/1995/1995539.png" class="homepage_logo">TEACHERS ZONE</button><br>
-    <button class="in" name= "submit" onclick="hometodeveloperlogin()"><img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" class="homepage_logo">DEVELOPERS ZONE</button><br>
-    <button class="in" name= "submit" onclick="hometoadminlogin()"><img src="https://cdn-icons-png.flaticon.com/512/1320/1320457.png" class="homepage_logo">ADMIN</button>
+    <button type='button' id='btn' onclick="hometostdlogin()"" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif',>students zone</button><br>
+    <button type='button' id='btn' onclick="hometoteacherlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif'>teachers zone</button><br>
+    <button type='button' id='btn' onclick="hometodeveloperlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif'>developers zone</button><br>
+    <button type='button' id='btn' onclick="hometoadminlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif'>admin</button>
   </div>
 </div>
 </div>
+<!-- Receving phone number -->
+<div id="getphno" style="display: block;" class="getphno">
+    <div class="wrapper">
+		<div class="form_container">
+            <div class="heading">
+                <h3 id="android" style="display: none;"></h3>
+                <h5 id="android1" style="display: none;"></h5><br>
+                <h4>Enter your mobile number for verification</h4>
+              </div>
+			<div class="form_wrap">
+				<div class="form_item">
+					<input type="text" placeholder="Mobile number" id="phno" name="phno">  
+				</div>
+			</div>
+			<div class="form_wrap select_box">
+			<div class="btn">
+                <button id='instbtn' onclick='phnotodiv1();' style='background: white;margin: 10px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+			</div>
+		</div>
+	  </div>
+  </div>
+  </div>
 <!-- Register form division 1 -->
-<div>
-<div id="register_form_div1" style="display: none;" class="register_form_div1">
-  <div class="register_form_container_div1">
-        <div class="register_form_centre">
-        <a id="name" style="display:none"></a>
-        <input type="text" placeholder="First name" name="fn" class="myinput" id="fn" >
-        <br><br><input type="text" placeholder="Surname" name="ln" class="myinput" id="ln">
-        <a id="surname" style="display:none"></a>
-        <br><br><input  type="text" placeholder="Date of Birth" onfocusout="datetotext()" onfocus="(this.type='date')" name="dob" class="myinput" id="dob">
-        <a id="date" style="display:none"></a>
-        <br><br><select name="gender" class='register_form_gender' id='gen'>
-          <option value="">Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Transgender">Transgender</option>
-          <option value="Agender">Agender</option>
-          <option value="Abimegender">Abimegender</option>
-          <option value="Adamasgender">Adamasgender</option>
-          <option value="Aerogender">Aerogender</option>
-          <option value="Aesthetigender">Aesthetigender</option>
-          <option value="Affectugender">Affectugender</option>
-          <option value="Agenderflux">Agenderflux</option>
-          <option value="Alexigender">Alexigender</option>
-          <option value="Aliusgender">Aliusgender</option>
-          <option value="Amaregender">Amaregender</option>
-          <option value="Ambigender">Ambigender</option>
-          <option value="Ambonec">Ambonec</option>
-          <option value="Amicagender">Amicagender</option>
-          <option value="Androgyne">Androgyne</option>
-          <option value="Anesigender">Anesigender</option>
-          <option value="Angenital">Angenital</option>
-          <option value="Anogender">Anogender</option>
-          <option value="Anongende">Anongende</option>
-          <option value="Antegender">Antegender</option>
-          <option value="Anxiegender">Anxiegender</option>
-          <option value="Apagender">Apagender</option>
-          <option value="Apconsugender">Apconsugender</option>
-          <option value="Astergender">Astergender</option>
-          <option value="Astralgender">Astralgender</option>
-          <option value="Autigender">Autigender</option>
-          <option value="Autogender">Autogender</option>
-          <option value="Axigender">Axigender</option>
-          <option value="Bigender">Bigender</option>
-          <option value="Biogender">Biogender</option>
-          <option value="Blurgender">Blurgender</option>
-          <option value="Boyflux">Boyflux</option>
-          <option value="Burstgender">Burstgender</option>
-          <option value="Caelgender">Caelgender</option>
-          <option value="Cassgender">Cassgender</option>
-          <option value="Cassflux">Cassflux</option>
-          <option value="Cavusgender">Cavusgender</option>
-          <option value="Cendgender">Cendgender</option>
-          <option value="Ceterogender">Ceterogender</option>
-          <option value="Ceterofluid">Ceterofluid</option>
-          <option value="Cisgender">Cisgender</option>
-          <option value="Cloudgender">Cloudgender</option>
-          <option value="Collgender">Collgender</option>
-          <option value="Colorgender">Colorgender</option>
-          <option value="Commogender">Commogender</option>
-          <option value="Condigender">Condigender</option>
-          <option value="Deliciagender">Deliciagender</option>
-          <option value="Demifluid">Demifluid</option>
-          <option value="Demiflux">Demiflux</option>
-          <option value="Demigender">Demigender</option>
-          <option value="Domgender">Domgender</option>
-          <option value="Duragender">Duragender</option>
-          <option value="Egogender">Egogender</option>
-          <option value="Epicene">Epicene</option>
-          <option value="Esspigender">Esspigender</option>
-          <option value="Exgender">Exgender</option>
-          <option value="Existigender">Existigender</option>
-          <option value="Femfluid">Femfluid</option>
-          <option value="Femgender">Femgender</option>
-          <option value="Fluidflux">Fluidflux</option>
-          <option value="Gemigender">Gemigender</option>
-          <option value="Genderblank">Genderblank</option>
-          <option value="Genderflow">Genderflow</option>
-          <option value="Genderfluid">Genderfluid</option>
-          <option value="Genderfuzz">Genderfuzz</option>
-          <option value="Genderflux">Genderflux</option>
-          <option value="Genderpuck">Genderpuck</option>
-          <option value="Genderqueer">Genderqueer</option>
-          <option value="Genderwitched">Genderwitched</option>
-          <option value="Girlflux">Girlflux</option>
-          <option value="Healgender">Healgender</option>
-          <option value="Mirrorgender">Mirrorgender</option>
-          <option value="Omnigender">Omnigender</option></select>
-        <a id="gender" style="display:none"></a><button   class="register_form_button_div1" name='next' id="div1_next" onclick="div1()">Next</button><br><br><br><br><br><br></div></div></div></div>
+<div id="register_form_div1" style="display: none;">
+    <div class="wrapper">
+		<div class="form_container">
+      <div class="heading">
+        <h3 id="android" style="display: none;"></h3>
+        <h5 id="android1" style="display: none;"></h5></div>
+				<div class="form_item">
+					<input type="text" placeholder="Full name" name="fn" id="fn" > 
+				</div>
+			<div class="form_wrap">
+				<div class="form_item">
+					<input  type="text" placeholder="Date of Birth" onfocusout="datetotext()" onfocus="(this.type='date')" name="dob" id="dob"> 
+				</div>
+			</div>
+			<div class="form_wrap select_box">
+				<div class="form_item">
+					<select name="Gender" id="gender">
+						<option value="" disabled selected>Gender</option>
+						<option>Male</option>
+						<option>Female</option>
+						<option>Other</option>
+					</select>  
+				</div>
+			<div class="btn">
+                <button onclick='div1todiv2();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+			</div>
+		</div>
+	  </div>
+  </div></div>
 <!-- Register form division 2 -->
-<div id="register_form_div2" style="display:none" class="register_form_div2">
-      <div class="register_form_container_div2">
-       <div class="register_form_centre">
-        <a id="fathername" style="display:none"></a>
-        <input type="text" placeholder="Father name" name="father" class="myinput" id="father" >
-        <a id="mothername" style="display:none"></a>
-        <br><br><input type="text" placeholder="Mother name" name="mother" class="myinput" id="mother" >
-        <br><br><input type="text" placeholder="Spouse name" name="spouse" class="myinput" id="spouse" >
-        <br><br><div style="display: flex;">
-          <div><input type="number" placeholder="No. of siblings" name="siblings"id="siblings" min="0" max="5"></div>
-        <div><input type="number" placeholder="No. of kids" name="child" id="child" min="0" max="5"></div></div>
-        <button   class="register_form_button_div2" name='submit' onclick="div2()" >Submit</button><br><br><br><br></div></div></div>
-<!-- Student Login -->
-<div id="student_login" style="display:none" class="student_login">
-  <form id="stdreset">
-    <div class="login_container">
-      <h1 class = "login_signinh1">Sign in</h1>
-     <div class="login_centre">
-      <br><br><br><input type="text" placeholder="Enter Student ID" name="studentid" class="login_input" id="studentid" required><br><br>
-       <input  type="password" placeholder="Enter password" name="password" class="login_input" id="studentpass" required><br><br>
-       <font class="login_showpass"><input  type="checkbox" onclick="std_showpass()">Show Password</font> 
-      <button class="login_button" name= "submit" onclick="student_validate()">Submit</button><br><br><br><br><br>
-      <a class="login_frgtpass" href="#">Forgot password?</a><br><br>
+<div id="register_form_div2" style="display:none">
+    <div class="wrapper">
+		<div class="form_container">
+      <div class="heading">
+        <h3 id="android" style="display: none;"></h3>
+        <h5 id="android1" style="display: none;"></h5>
       </div>
-</div>
-</div>
-</div>
-</body>
-<!-- Teacher Login -->
-<div id="teacher_login" style="display:none" class="teacher_login">
-    <div class="login_container">
-      <h1 class = "login_signinh1">Sign in</h1>
-     <div class="login_centre">
-      <br><br><br><input type="text" placeholder="Enter Teacher ID" name="teacherid" class="login_input" id="teacherid" required><br><br>
-       <input  type="password" placeholder="Enter password" name="teacherpassword" class="login_input" id="teacherpass" required><br><br>
-       <font class="login_showpass"><input  type="checkbox" onclick="teach_showpass()">Show Password</font> 
-      <button class="login_button" name= "submit">Submit</button><br><br><br><br><br>
-      <a class="login_frgtpass" href="#">Forgot password?</a><br><br>
-</div>
-</div>
-</div>
-<!-- Developers Zone  -->
-<div id="developer_login" style="display:none" class="developer_login">
-    <div class="login_container">
-      <h1 class = "login_signinh1">Sign in</h1>
-     <div class="login_centre">
-      <br><br><br><input type="text" placeholder="Enter Developer ID" name="developerid" class="login_input" id="coderid" required><br><br>
-       <input  type="password" placeholder="Enter password" name="developerpassword" class="login_input" id="coderpas" required><br><br>
-       <font class="login_showpass"><input  type="checkbox" onclick="developer_showpass()">Show Password</font> 
-      <button class="login_button" name= "submit">Submit</button><br><br><br><br><br>
-      <a class="login_frgtpass" href="#">Forgot password?</a><br><br>
-</div>
-</div>
-</div>
-<!-- Admin  -->
-<div id="admin_login" style="display:none" class="admin_login">
-    <div class="login_container">
-      <h1 class = "login_signinh1">Sign in</h1>
-     <div class="login_centre">
-      <br><br><br><input type="text" placeholder="Enter Admin ID" name="adminid" class="login_input" id="adminid" required><br><br>
-       <input  type="password" placeholder="Enter password" name="adminpassword" class="login_input" id="adminpas" required><br><br>
-       <font class="login_showpass"><input  type="checkbox" onclick="admin_showpass()">Show Password</font> 
-      <button class="login_button" name= "submit">Submit</button><br><br><br><br><br>
-      <a class="login_frgtpass" href="#">Forgot password?</a><br><br>
-</div>
-</div>
-</div>
+			<div class="form_wrap fullname">
+				<div class="form_item">
+					<input type="text" placeholder="Father name" id="father" > 
+				</div>
+				<div class="form_item">
+					<input type="text" placeholder="Mother Name" id="mother">  
+				</div>
+			</div>
+			<div class="form_wrap select_box">
+				<div class="form_item">
+					<select name="marital_status" id="marriage">
+						<option value="" disabled selected>Marital status</option>
+						<option value="married">Married</option>
+						<option value="not married">Not Married</option>
+					</select>  
+				</div>
+			<div class="btn">
+			  <button onclick='div2todiv3();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+			</div>
+		</div>
+	  </div>
+  </div></div>
+<!-- Register form division 2 of 3 -->
+<div id="register_form_div2of3" style="display:none">
+  <div class="wrapper">
+  <div class="form_container">
+    <div class="heading">
+      <h3 id="android" style="display: none;"></h3>
+      <h5 id="android1" style="display: none;"></h5>
+    </div>
+    <div class="form_wrap fullname">
+      <div class="form_item">
+        <input type="text" placeholder="Spouse name" id="spouse" > 
+      </div>
+      <div class="form_item">
+        <input type="number" placeholder="No. of child" id="child" min="0" max="5">  
+      </div>
+    </div>
+    <div class="btn">
+      <button onclick='div2of3to1of3();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+    </div>
+  </div>
+</div></div>
 
+<!-- Register form division 1 of 3 -->
+<div id="register_form_div1of3" style="display:block">
+  <div class="wrapper">
+    <div class="form_container">
+      <div class="heading">
+        <h3 id="android" style="display: none;"></h3>
+        <h5 id="android1" style="display: none;"></h5>
+        <h4>Upload your image...</h4>
+      </div>
+      <div class="form_wrap">
+				<div class="form_item">
+					<input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" style="color: white;">
+          <div id="display-img"><div id="display-image"></div></div>
+				</div>
+			</div>
+      <div class="form_wrap fullname">
+        <div class="form_item">
+          <input type="text" placeholder="Spouse name" id="spouse" > 
+        </div>
+        <div class="form_item">
+          <input type="number" placeholder="No. of child" id="child" min="0" max="5">  
+        </div>
+      </div>
+      <div class="btn">
+        <button onclick='div1of3todiv4();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Footer side -->
-<div class="footer">
+<div class="footer" style="display: none;" id="foot">
   <div class="social">
       <a href="https://youtu.be/WuEH265pUy4"id='yt'><i class="fab fa-youtube"></i></a>
       <a href="https://github.com/Instinctcms" id='git'><i class="fa-brands fa-github"></i></a>
@@ -237,31 +214,81 @@
   </p>
 </div>
 </body>
-<script type="text/javascript">
-var instinctid= '';
-var characters= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-var charactersLength = characters.length;
-for ( var i = 0; i < 6; i++ ) {
-  instinctid += characters.charAt(Math.floor(Math.random() *charactersLength));
-       }
+<script>
+const image_input = document.querySelector("#image-input");
 
+image_input.addEventListener("change", function() {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    const uploaded_image = reader.result;
+    document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
+  });
+  reader.readAsDataURL(this.files[0]);
+});
 
-$(document).ready(function () {
-          $("#homepage").hide();
-          $("#homepage").delay(2000).fadeIn(500);
-          $("#loader").show().delay(1999).fadeOut();
-      });
-      $(document).ready(function () {
-          $(".nav").hide();
-          $(".nav").delay(2000).fadeIn(500);
-          $("#loader").show().delay(1999).fadeOut();
-      });
-      $(document).ready(function () {
-          $(".footer").hide();
-          $(".footer").delay(2000).fadeIn(500);
-          $("#loader").show().delay(1999).fadeOut();
-      });
+var input = document.getElementById("phno");
+input.addEventListener("keypress", function(event) {
+if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("instbtn").click();
+  }
+});
+function div(){
+    document.getElementById("register_form_div1").style.display="none";
+    document.getElementById("register_form_div2").style.display="block";
+}
+var url1= window.location.href;
+a=url1.match("ca&")
+if(a=='ca&'){
+  url1=url1.replace('ca&','')
+  $.ajax({url: 'master.php',type: 'GET'})
+.done(function(data){
+  const arr=data.split("[s~1]");
 
+  const fcap = arr[0].charAt(0)
+  const flcap = fcap.toUpperCase()
+  const remainingLetters = arr[0].slice(1)
+  const cw = flcap + remainingLetters;
+//   const cwf='';
+//   const arr1=arr[0].split(" ");
+//   for (let i = 0; i < arr1.length; i++) {
+//     const fcap = arr[i][0].charAt(0)
+//     const flcap = fcap.toUpperCase()
+//     const remainingLetters = arr[i].slice(1)
+//     const cw = flcap + remainingLetters;
+//     cwf=''+cw;
+// }
+
+  const fcap1 = arr[1].charAt(0)
+  const flcap1 = fcap1.toUpperCase()
+  const remainingLetters1 = arr[1].slice(1)
+  const cw1 = flcap1 + remainingLetters1;
+  document.getElementById("android").innerHTML = cw;
+  document.getElementById("android").style.display="block";
+  document.getElementById("android1").innerHTML = cw1;
+  document.getElementById("android1").style.display="block";
+});
+}
+const nextURL = url1;
+const nextTitle = 'My new page title';
+const nextState = { additionalInformation: 'Updated the URL with JS' };
+window.history.pushState(nextState, nextTitle, nextURL);
+window.history.replaceState(nextState, nextTitle, nextURL);
+const array = url1.split("?");
+if(array[1]=='home'){
+  document.getElementById("getphno").style.display="none";
+  document.getElementById("register_form_div1").style.display="none";
+  document.getElementById("register_form_div2").style.display="none";
+  document.getElementById("navigation").style.display="block";
+  document.getElementById("homepage").style.display="block";
+  document.getElementById("foot").style.display="block";
+}
+
+if(typeof(array[1]) != "undefined"){
+  if(array[1]!='home'){
+    phno.value=array[1];
+  }
+}
 var letters = /^[a-zA-Z\s]*$/;
 var date= /^\d{4}[./-]\d{2}[./-]\d{2}$/;
 
@@ -278,337 +305,42 @@ if(tdate<10){
 var maxDate= year+ "-" + month+ "-" +tdate;
 document.getElementById("dob").setAttribute("max", maxDate);
 
-
-function student_validate(){
-var stdid= studentid.value;
-var stdpass= studentpass.value;
-
-$.ajax({url: "login.php", type:"POST",
-data:{studentid:stdid,password:stdpass},
-    success: function(output){
-        alert(output);
-        document.getElementById("stdreset").reset();
-    }})
-}
-  function std_showpass() {
-    var x = document.getElementById("studentpass");
-    if (x.type == "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-  function teach_showpass() {
-    var x = document.getElementById("teacherpass");
-    if (x.type == "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-  function developer_showpass() {
-    var x = document.getElementById("coderpass");
-    if (x.type == "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-  function admin_showpass() {
-    var x = document.getElementById("adminpass");
-    if (x.type == "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-  function applicationform(){
-    $(".icon-burger").click();
-    $(".register_form_div1").fadeIn("slow");
-    document.getElementById("register_form_div1").style.display="block";
-    document.getElementById("register_form_div2").style.display="none";
-    document.getElementById("homepage").style.display="none";
-    document.getElementById("student_login").style.display="none";
-    document.getElementById("teacher_login").style.display="none";
-    document.getElementById("developer_login").style.display="none";
-    document.getElementById("admin_login").style.display="none";
-  }
-var result='';
-function div1(){
-    let firstname=fn.value;
-    let lastname=ln.value;
-    document.getElementById("register_form_div1").style.display="block";
-    if(fn.value==''){
-      document.getElementById("name").innerHTML = "This field is required";
-      document.getElementById("name").style.display="block";
-    }
-    else if(ln.value==''){
-      if(fn.value==''){
-      document.getElementById("name").innerHTML = "This field is required";
-      document.getElementById("name").style.display="block";
-    }
-    if(fn.value!=''){
-      if(fn.value.match(letters)){
-        if(firstname.length<=3){
-      document.getElementById("name").innerHTML = "Name must be greater than 3 characters";
-      document.getElementById("name").style.display="block";
-        }
-        else{
-          document.getElementById("name").style.display="none";
-        }
-      }
-      else{
-        document.getElementById("name").innerHTML = "Name should contain only letters";
-        document.getElementById("name").style.display="block";
-      }
-    }
-    if(fn.value.match(letters)){
-      if(firstname.length>3){
-        document.getElementById("surname").innerHTML = "Surame must contain atleast 1 character";
-        document.getElementById("surname").style.display="block";
-    }}
+var a='';
+var instinctid= phno.value;
+var instinctcid= '';
+var phnoval= /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+function phnotodiv1(){
+  ph=phno.value;
+  if(ph==''){
+    document.getElementById("phno").style.borderColor="red";}
+  if(ph!=''){
+    ph = ph.replaceAll(" ", "");
+    ph = ph.replaceAll("+", "");
+    ph = ph.replaceAll("-", "");
+    ph = ph.replaceAll("(", "");
+    ph = ph.replaceAll(")", "");
+    if (ph.length == 12) {
+      var ph = ph.substring(2);}
+    if(ph.length==10){
+      for (var i = 0; i < 10; i++)
+        if (ph[i] == "0" || ph[i] == "1" || ph[i] == "2" || ph[i] == "3" || ph[i] == "4" || ph[i] =="5" || ph[i] == "6" || ph
+        [i] == "7" || ph[i] == "8" || ph[i] == "9") {
+      document.getElementById("phno").style.borderColor="grey";
+      instinctcid=phno.value;
+      phno.value='';
+      document.getElementById("getphno").style.display="none";
+      $(".register_form_div1").fadeIn("slow");
+      document.getElementById("register_form_div1").style.display="block";}
     else{
-      if(fn.value.match(letters)){
-        if(firstname.length<=3){
-      document.getElementById("name").innerHTML = "Name must be greater than 3 characters";
-      document.getElementById("name").style.display="block";
-        }
-        else{
-          document.getElementById("name").style.display="none";
-        }
-      }
-      else{
-        document.getElementById("name").innerHTML = "Name should contain only letters";
-        document.getElementById("name").style.display="block";
-      }
+      document.getElementById("phno").style.borderColor="red";
     }
-    }
-    else if(dob.value==''){
-      if(fn.value==''){
-      document.getElementById("name").innerHTML = "This field is required";
-      document.getElementById("name").style.display="block";
-    }
-    if(fn.value!=''){
-      document.getElementById("name").style.display="none";
-    }
-    if(ln.value==''){
-      document.getElementById("surname").innerHTML = "Surame must contain atleast 1 character";
-      document.getElementById("surname").style.display="block";
-    }
-    if(ln.value!=''){
-      if(ln.value.match(letters)){
-        if(lastname.length<1){
-      document.getElementById("surname").innerHTML = "Surame must contain atleast 1 character";
-      document.getElementById("surname").style.display="block";
-        }
-        else{
-          document.getElementById("surname").style.display="none";
-        }
-      }
-      else{
-        document.getElementById("surname").innerHTML = "Surame should contain only letters";
-        document.getElementById("surname").style.display="block";
-      }
-    }
-    if(lastname.length>=1){
-      document.getElementById("date").innerHTML = "This field is required";
-      document.getElementById("date").style.display="block";
-    }
-    else{
-      if(ln.value.match(letters)){
-        if(lastname.length<1){
-      document.getElementById("surname").innerHTML = "Surame must contain atleast 1 character";
-      document.getElementById("surname").style.display="block";
-        }
-        else{
-          document.getElementById("surname").style.display="none";
-        }
-      }
-      else{
-        document.getElementById("surname").innerHTML = "Surame should contain only letters";
-        document.getElementById("surname").style.display="block";
-      }
-    }
-    }
-    else if(gen.value==''){
-    if(fn.value!=''){
-      document.getElementById("name").style.display="none";
-    }
-    if(ln.value!=''){
-      document.getElementById("surname").style.display="none";
-    }
-    if(dob.value!=''){
-        var yr = dob.value.slice(0, 4);
-        if(yr>year){
-          document.getElementById("date").innerHTML = "Enter valid Year";
-          document.getElementById("date").style.display="block";
-        }
-        else{
-          document.getElementById("date").style.display="none";
-        }
-      }
-    if(gen.value==''){
-        document.getElementById("gender").innerHTML = "This field is required";
-        document.getElementById("gender").style.display="block";}
-    else{
-      document.getElementById("date").innerHTML = "Enter valid Date";
-      document.getElementById("date").style.display="block";
-
-    }
+  }}
+  if(ph.length!=10){
+    document.getElementById("phno").style.borderColor="red";
   }
-    else{
-      if(fn.value!=''){
-      document.getElementById("name").style.display="none";
-    }
-    if(ln.value!=''){
-      document.getElementById("surname").style.display="none";
-    }
-    if(dob.value!=''){
-        var yr = dob.value.slice(0, 4);
-        if(yr>year){
-          document.getElementById("date").innerHTML = "Enter valid Year";
-          document.getElementById("date").style.display="block";
-        }
-        else{
-          document.getElementById("date").style.display="none";
-        }
-      }
-      if(gen.value!=''){
-      document.getElementById("gender").style.display="none";
-    }
-  if(fn.value.match(letters) && ln.value.match(letters) && dob.value.match(date)){
-    var yr = dob.value.slice(0, 4);
-    if(firstname.length>3 && lastname.length>0 && yr<=year){
-
-      document.getElementById("register_form_div1").style.display="none";
-        var name= fn.value;
-        var surname= ln.value;
-        var date= dob.value;
-        var gender= gen.value;
-        $.ajax({url: "qwerty.php", type:"POST",
-      data:{fn:name,ln:surname,dob:date,gender:gender,instinct:'applynowdiv1'},
-          success: function(output){
-            result=output
-        }
-    })
-
-      document.getElementById("name").style.display="none";
-      document.getElementById("surname").style.display="none";
-      document.getElementById("date").style.display="none";
-      document.getElementById("gender").style.display="none";
-      $(".register_form_div2").fadeIn("slow");
-      document.getElementById("register_form_div2").style.display="block";
-    }}
-  else{
-    if(fn.value!=''){
-      if(fn.value.match(letters)){
-        if(firstname.length<=3){
-      document.getElementById("name").innerHTML = "Name must be greater than 3 characters";
-      document.getElementById("name").style.display="block";
-        }
-        else{
-          document.getElementById("name").style.display="none";
-        }
-      }
-      else{
-        document.getElementById("name").innerHTML = "Name should contain only letters";
-        document.getElementById("name").style.display="block";
-      }
-    }
-    if(ln.value!=''){
-      if(ln.value.match(letters)){
-        if(lastname.length<1){
-      document.getElementById("surname").innerHTML = "Surame must contain atleast 1 character";
-      document.getElementById("surname").style.display="block";
-        }
-        else{
-          document.getElementById("surname").style.display="none";
-        }
-      }
-      else{
-        document.getElementById("surname").innerHTML = "Surame should contain only letters";
-        document.getElementById("surname").style.display="block";
-      }
-    }}
-    }}
-  
-  function div2(){
-    document.getElementById("register_form_div2").style.display="block";
-    let fathername=father.value;
-    let mothername=mother.value;
-    if(father.value==''){
-      document.getElementById("fathername").innerHTML = "This field is required";
-      document.getElementById("fathername").style.display="block";
-    }
-    else if(mother.value==''){
-      document.getElementById("mothername").innerHTML = "This field is required";
-      document.getElementById("mothername").style.display="block";
-    }
-    else{
-      if(father.value!="" && mother.value!=""){
-          var spousename= spouse.value;
-          var sibling= siblings.value;
-          var children= child.value;
-          var phno= result;
-      $.ajax({url: "qwerty.php", type:"POST",
-      data:{father:fathername,mother:mothername,spouse:spousename,siblings:sibling,child:children,phno:result,instinct:'applynowdiv2'},
-          success: function(output){
-        }})
-
-        document.getElementById("fathername").style.display="none";
-        document.getElementById("mothername").style.display="none";
-            document.getElementById("homepage").style.display="block";
-            document.getElementById("register_form_div2").style.display="none";
-            alert('Your application has been received successfully')
-            fn.value=''
-            ln.value=''
-            dob.value=''
-            gen.value=''
-            father.value=''
-            mother.value=''
-            spouse.value=''
-            siblings.value=''
-            child.value=''
-          }}}
-
-  function home_refresh_main(){
-    $(".homepage").fadeIn("slow");
-    document.getElementById("homepage").style.display="block";
-    document.getElementById("register_form_div1").style.display="none";
-    document.getElementById("register_form_div2").style.display="none";
-    document.getElementById("student_login").style.display="none";
-    document.getElementById("teacher_login").style.display="none";
-    document.getElementById("developer_login").style.display="none";
-    document.getElementById("admin_login").style.display="none";
-    studentpass.value=''
-    studentid.value=''
-    fn.value=''
-    ln.value=''
-    dob.value=''
-    gen.value=''
-    father.value=''
-    mother.value=''
-  }
-  function hometostdlogin(){
-    $(".student_login").fadeIn("slow");
-    document.getElementById("homepage").style.display="none";
-    document.getElementById("student_login").style.display="block";
-  }
-  function hometoteacherlogin(){
-    $(".teacher_login").fadeIn("slow");
-    document.getElementById("teacher_login").style.display="block";
-    document.getElementById("homepage").style.display="none";
-  }
-  function hometodeveloperlogin(){
-    $(".developer_login").fadeIn("slow");
-    document.getElementById("developer_login").style.display="block";
-    document.getElementById("homepage").style.display="none";
-  }
-  function hometoadminlogin(){
-    $(".admin_login").fadeIn("slow");
-    document.getElementById("admin_login").style.display="block";
-    document.getElementById("homepage").style.display="none";
-  }
+  if(instinctcid==''){
+    instinctcid=phno.value;
+  }}
   function datetotext(){
     document.getElementById("dob").type="text";
     if(dob.value!=''){
@@ -618,6 +350,82 @@ function div1(){
   function instinct_call(){
     $(".icon-burger").click();
   }
+var letters = /^[a-zA-Z\s]*$/;
+var date= /^\d{4}[./-]\d{2}[./-]\d{2}$/;
+function div1todiv2(){
+  if(fn.value==''){document.getElementById("fn").style.borderColor="red";}
+  if(dob.value==''){document.getElementById("dob").style.borderColor="red";}
+  if(gender.value==''){document.getElementById("gender").style.borderColor="red";}
+  if(fn.value!=''){
+    if(fn.value.match(letters)){
+    document.getElementById("fn").style.borderColor="grey";}
+    else{
+      document.getElementById("fn").style.borderColor="red";
+    }
+  }
+  if(dob.value!=''){
+    if(dob.value.match(date)){
+      document.getElementById("dob").style.borderColor="grey";}
+    else{
+      document.getElementById("dob").style.borderColor="red";
+    }}
+  if(gender.value!=''){document.getElementById("gender").style.borderColor="grey";}
+  if(fn.value!='' && dob.value!='' && gender.value!=''){
+    if(fn.value.match(letters)){
+      if(dob.value.match(date)){
+        document.getElementById("register_form_div1").style.display="none";
+        document.getElementById("register_form_div2").style.display="block";
+      }
+    }
+  }
+}
+function div2todiv3(){
+  if(father.value==''){document.getElementById("father").style.borderColor="red";}
+  if(mother.value==''){document.getElementById("mother").style.borderColor="red";}
+  if(marriage.value==''){document.getElementById("marriage").style.borderColor="red";}
+  if(father.value!=''){
+    if(father.value.match(letters)){
+    document.getElementById("father").style.borderColor="grey";}
+    else{
+      document.getElementById("father").style.borderColor="red";
+    }
+  }
+  if(mother.value!=''){
+    if(mother.value.match(letters)){
+    document.getElementById("mother").style.borderColor="grey";}
+    else{
+      document.getElementById("mother").style.borderColor="red";
+    }
+  }
+  if(marriage.value!=''){
+    if(marriage.value.match(letters)){
+    document.getElementById("marriage").style.borderColor="grey";}
+    else{
+      document.getElementById("marriage").style.borderColor="red";
+    }
+  }
+  if(father.value!='' && mother.value!='' && marriage.value!=''){
+    if(marriage.value=='married'){
+      document.getElementById("register_form_div2").style.display="none";
+      document.getElementById("register_form_div2of3").style.display="block";}
+    else{
+      document.getElementById("register_form_div2").style.display="none";
+      document.getElementById("register_form_div1of3").style.display="block";
+    }}
+}
+function div2of3to1of3(){
+  var spousename=spouse.value;
+  var nfchild=child.value;
+  if(spousename==''){document.getElementById("spouse").style.borderColor="red";}
+  if(nfchild==''){document.getElementById("child").style.borderColor="red";}
+  if(spousename!='' && nfchild!=''){
+  document.getElementById("register_form_div2of3").style.display="none";
+  document.getElementById("register_form_div1of3").style.display="block";}
+}
+
+function div1of3todiv4(){
+  alert('instinct')
+}
 </script>
 <style>
   a:hover {
@@ -626,7 +434,13 @@ function div1(){
    margin: 0;
    padding: 0;
    box-sizing: border-box;}
+   body{
+    background-color: #262626;
+   }
 /* Navigation Bar */
+#btn:hover{
+  opacity: 0.5;
+}
 .container {
 	position: relative;
 	margin-top: 100px;}
@@ -794,535 +608,7 @@ function div1(){
 	}
 	
 }
-/* Homepage */
-   .home_container {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 32%;
-   height: 45%;
-   border-style: solid;
-   border-radius: 25px;
-   background-size: cover;
-   border: none;
-  }
 
-/* Register form css */
-.homebtn{
-  padding: 40px 0;
-}
-.in {
-    border: none;
-    padding-left: 60px;
-    cursor: pointer;
-    width: 80%;
-    height: 18%;
-    border-radius: 17px;
-    position: relative;
-    transform: translate(12.5%, 30%); 
-    font-size: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 1000;
-    display: table;
-    }
-  .in:hover {
-      opacity: 0.8;
-    }
-    .homepage_logo{
-    width: 50px;
-    position: absolute;
-    left: 23px;
-    top: 2px;
-    }
-
-@media all and (max-width: 768px) {
-  .home_container{
-    width: 92%;
-  }
-}
-@media all and (max-width: 395px) and (min-width: 376px){
-  .homepage_logo{
-    width: 64px;
-    }
-    .in {
-    padding-left: 78px;}
-  }
-  @media all and (max-width: 361px) and (min-width: 359px){
-  .homepage_logo{
-    width: 57px;
-    }}
-    @media all and (max-width: 412px) and (min-width: 411px){
-  .homepage_logo{
-    width: 71px;
-    }
-    .in {
-    padding-left: 78px;}}
-  @media all and (max-width: 820px) and (min-width: 819px){
-      .in {
-    width: 129%;
-    height: 14.5%;
-    transform: translate(-10.5%, 30%);
-}
-.homepage_logo{
-    width: 72px;
-    }
-} 
-  @media all and (max-width: 1025px) and (min-width: 1023px){
-    .homepage_logo{
-    width: 45px;
-    }
-  }
-  @media all and (max-width: 281px) and (min-width: 279px){
-    .in {
-    padding-left: 67px;
-    width: 100%;
-    transform: translate(0.3%, 30%);
-}
-.homepage_logo{
-    left: 20px;
-    }
-  }
-  @media all and (max-width: 415px) and (min-width: 413px){
-    .homepage_logo{
-    width: 70px;
-    }
-    .in {
-    padding-left: 80px;}
-  }
-#pos{
- position: relative;
- top: 20%;
- left: 50%;;
-}
-#text_color_remove{ 
- color: inherit;
- text-decoration: none; } 
-.register_form_button_div1{
-      border: none;
-      cursor: pointer;
-      width: 67%;
-      height: 14%;
-      border-radius: 13px;
-      position: absolute;
-      top: 97%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin: 10px auto;
-      font-size: 115%;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 1000;
-    
- }
- .register_form_button_div2{
-      border: none;
-      cursor: pointer;
-      width: 67%;
-      height: 14%;
-      border-radius: 13px;
-      position: absolute;
-      top: 94%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin: 10px auto;
-      font-size: 115%;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 1000;
-    
- }
- .register_form_button_div1:hover {
-   opacity: 0.8;
- }
- .register_form_button_div2:hover {
-   opacity: 0.8;
- }
- .myinput{
-      border-radius: 100px;
-      background:rgba(76, 175, 79, 0.005);
-      padding: 6% 11%;
-      border: 3px solid grey;
-      font-size: 1.2rem; 
-      width: 176%;
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      position: relative;
-      left: -38%;
-      display: list-item;
-    }
- .register_form_centre {
-   margin: 0;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
- }
- .register_form_container_div1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 30%;
-      height: 460px;
-      border-style: solid;
-      border-radius: 25px;
-      border-color: grey;
- }
- @media all and (max-width: 800px) {
-  .register_form_container_div1{
-        width: 88%;
-      }
-      .register_form_button_div1{
-      width: 65%;
-    }
-  }
-  @media all and (max-width: 1000px) and (min-width: 801px){
-    .register_form_container_div1{
-        width: 50%;
-      }
-  }
- .register_form_container_div2 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 30%;
-      height: 460px;
-      border-style: solid;
-      border-radius: 25px;
-      border-color: grey;
- }
- @media all and (max-width: 800px) {
-  .register_form_container_div2{
-        width: 88%;
-      }
-      .register_form_button_div2{
-      width: 65%;
-    }
-  }
-  @media all and (max-width: 1000px) and (min-width: 801px){
-    .register_form_container_div2{
-        width: 50%;
-      }
-  }
- .a {
- font-size: 50px;
- font-family: sans-serif;
- color: #66fcf1;
- position: absolute;
- left: 30%;
- top: 4%;
- }
- .acc {
- position: absolute;
- top: 105%;
- left: 10%;
- font-family: sans-serif;
- font-size: 1.2rem;
- text-decoration: none;
- color: white;
- white-space: nowrap;
- }
- .lh{
- position: absolute;
- top: 105%;
- left: 66%;
- font-family: sans-serif;
- text-decoration: none;
- font-size: 1.2rem;
- color: #66fcf1;
- }
- ::placeholder {
- color: white;
- opacity: 0.9; 
- }
- .register_form_first_name{
-       border-radius: 100px;
-      background:rgba(76, 175, 79, 0.005);
-      padding: 6% 11%;
-      border: 3px solid grey;
-      font-size: 1.2rem; 
-      width: 176%;
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      position: relative;
-      left: -38%;
- }
- .register_form_last_name{
-      border-radius: 100px;
-      background:rgba(76, 175, 79, 0.005);
-      padding: 6% 11%;
-      border: 3px solid grey;
-      font-size: 1.2rem; 
-      width: 176%;
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      position: relative;
-      left: 20%;
- }
-#siblings{
-    border-radius: 100px;
-    background: rgba(76, 175, 79, 0.005);
-    padding: 21% 12%;
-    border: 3px solid grey;
-    font-size: 17px;
-    width: 222%;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    position: relative;
-    left: -98%;
-}
-#child{
-    border-radius: 100px;
-    background: rgba(76, 175, 79, 0.005);
-    padding: 21% 13%;
-    border: 3px solid grey;
-    font-size: 17px;
-    width: 222%;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    position: relative;
-    right: -75%;
-}
- .tmc{
- color: white;
- font-family: sans-serif;
- position: relative;
- left: 8%;
- }
- .cpr {
- width:200px;
- height:200px;
- position: absolute;
- top: 113%;
- left: 27%;
- font-family: sans-serif;
- font-size: 0.9rem;
- text-decoration: none;
- color: white;
- white-space: nowrap;
- margin-top: 0px;
- }
- #name {
- padding: 0px;
- color: #66fcf1;
- position: absolute;
- top: 15%;
- left: -25%;
- font-family: sans-serif;
- animation: blinker 1s linear infinite;
- white-space: nowrap;
- }
- #surname {
- padding: 0px;
- color: #66fcf1;
- position: absolute;
- top: 39%;
- left: -25%;
- font-family: sans-serif;
- animation: blinker 1s linear infinite;
- white-space: nowrap;
- }
- #date {
-   padding: 0px;
-   color: #66fcf1;
-   position: absolute;
-   top: 62%;
-   left: -25%;
-   font-family: sans-serif;
-   animation: blinker 1s linear infinite;
-   }
-   #gender{
-     padding: 0px;
-     color: #66fcf1;
-     position: absolute;
-     top: 87%;
-     left: -25%;
-     font-family: sans-serif;
-     animation: blinker 1s linear infinite;
-     }
-     #fathername{
-      padding: 0px;
-      color: #66fcf1;
-      position: absolute;
-      top: 15%;
-      left: -25%;
-      font-family: sans-serif;
-      animation: blinker 1s linear infinite;
-      white-space: nowrap;
-     }
-     #mothername{
-      padding: 0px;
-      color: #66fcf1;
-      position: absolute;
-      top: 38%;
-      left: -25%;
-      font-family: sans-serif;
-      animation: blinker 1s linear infinite;
-      white-space: nowrap;
-     }
- @keyframes blinker {
- 50% {
-   opacity: 0;
- }
- }
- .h1 {
-   font-size:30px;
-   font-family: sans-serif;
-   color: white;
-   position: absolute;
-   left: 2%;
-   top: -1%;
-   white-space: nowrap;
- }
- .register_form_gender{
-   border-radius: 100px;
-   background:#262626;
-   padding: 6% 11%;
-   border: 3px solid grey;
-   font-size: 1.2rem; 
-   color: white;
-   width: 176%;
-   position: absolute;
-   left: -38%;
-   font-family: 'Poppins', sans-serif;
- }
- ::-webkit-calendar-picker-indicator {
-   filter: invert(1);
-}
- .register_form_mail_icon{
-  height: 10%;
-    position: absolute;
-    top: 56.5%;
-    left: 86%;
-    opacity: 0.8;
- }
- body {
- background-color: #262626;
-}
- @media all and (max-width: 800px) {
- body {
-   background: black;
- }
- .navpo li {
-   display: grid;
-}
-.apply_btn {
-     padding: 14px 20px;
-      font-size: 0.5rem;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 1000;
-    }
-}
-/* Student signin css */
-.login_container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 30%;
-      height: 400px;
-      border-style: solid;
-      border-radius: 25px;
-      border-color: grey;
-      }
-    .login_button {
-      border: none;
-      cursor: pointer;
-      width: 50%;
-      height: 14%;
-      border-radius: 13px;
-      position: absolute;
-      top: 76%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin: 10px auto;
-      font-size: 115%;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 1000;
-    }
-  .login_button:hover {
-      opacity: 0.8;
-    }
-  .login_input{
-      border-radius: 100px;
-      background:rgba(76, 175, 79, 0.005);
-      padding: 6% 11%;
-      border: 3px solid grey;
-      font-size: 1.2rem; 
-      width: 176%;
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      position: relative;
-      left: -38%;
-    }
-  .login_centre {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
-  .login_frgtpass{
-        color: white;
-        font-family: sans-serif;
-        float: left;
-        position: absolute;
-        top: 96%;
-        left: -27%;
-        text-decoration: none;
-        transition:  color 0s;
-      }
-.login_frgtpass:hover {
-   color: #66fcf1;
-   cursor: default;
-} 
-  .login_signinh1 {
-    font-size: 270% ;
-    font-family: sans-serif;
-    color: white;
-    margin-top: 10px;
-    text-align: center;
-  }
-  ::placeholder {
-    color: white;
-    opacity: 0.9 ; 
-  }
-  .login_showpass{
-    color: white;
-    font-family: sans-serif;
-    position: absolute;
-    left: -28%;
-  }
-  .alert {
-    padding: 0px;
-    color: #66fcf1;
-    position: absolute;
-    top: 18%;
-    left: 9%;
-    font-family: sans-serif;
-    animation: blinker 1s linear infinite;
-  }
-  @keyframes blinker {
-    50% {
-        opacity: 0;
-    }
-  }
-  @media all and (max-width: 800px) {
-      .login_container{
-        width: 88%;
-        /* height: 49%; */
-      }
-    .login_button {
-      width: 65%;
-    }
-  }
-  @media all and (max-width: 1000px) and (min-width: 801px){
-    .login_container{
-        width: 50%;
-        /* height: 55%; */
-      }
-  }
 /* Footer Side */
 .footer{
         padding: 40px 0;
@@ -1413,15 +699,15 @@ function div1(){
         align-items: center;
         min-height: 100vh;
     }
-    .loaderring{
+    .loadinstinct{
         position: absolute;
         width: 200px;
         height: 200px;
         border-radius: 50%;
-        animation: loaderring 2s linear infinite;
+        animation: instinctload 2s linear infinite;
     }
-    @keyframes loaderring {
-       0%{
+    @keyframes instinctload {
+      0%{
         transform: rotate(0deg);
         box-shadow: 1px 5px 2px #e65c00;
        } 
@@ -1432,9 +718,9 @@ function div1(){
        100%{
         transform: rotate(360deg);
         box-shadow: 1px 5px 2px #0456c8;
-       } 
+       }  
     }
-    .loaderring:before{
+    .instinctload:before{
         position: absolute;
         content: '';
         left: 0;
@@ -1458,4 +744,137 @@ function div1(){
             color: #262626;
         }
     }
+
+
+    .wrapper{
+  max-width: 450px;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 10px;
+
+}
+
+.wrapper .form_container{
+  background: #262626;
+  padding: 30px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  margin-top: -30px;
+}
+.wrapper .form_container .form_item{
+  margin-bottom: 25px;
+}
+
+.form_wrap.fullname,
+.form_wrap.select_box{
+  display: flex;
+}
+
+.form_wrap.fullname .form_item,
+.form_wrap.select_box .form_item{
+  width: 50%;
+}
+
+.form_wrap.fullname .form_item:first-child,
+.form_wrap.select_box .form_item:first-child{
+  margin-right: 4%;
+}
+
+.wrapper .form_container .form_item label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form_item input[type="text"],
+.form_item select{
+  width: 100%;
+  height: 47px;
+  padding: 13px;
+  font-size: 16px;
+  background-color: #262626;
+  border: 3px solid grey;
+  border-radius: 13px;
+  color: white;
+}
+
+.form_item input[type="text"]:focus{
+  border-color: #6271f0;
+}
+.form_item input[type="date"],
+.form_item select{
+  width: 100%;
+  height: 47px;
+  padding: 11px;
+  font-size: 16px;
+  background-color: #262626;
+  border: 3px solid grey;
+  border-radius: 13px;
+  color: #e1e1e1;
+}
+
+.form_item input[type="date"]:focus{
+  border-color: #6271f0;
+}
+.form_item input[type="number"],
+.form_item select{
+  width: 100%;
+  height: 47px;
+  padding: 11px;
+  font-size: 16px;
+  background-color: #262626;
+  border: 3px solid grey;
+  border-radius: 13px;
+  color: #e1e1e1;
+}
+
+.form_item input[type="number"]:focus{
+  border-color: #6271f0;
+}
+
+.btn input[type="submit"]{
+  background: #1598d4;
+  border: 1px solid #1598d4;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+}
+.heading{
+  background: #262626;
+  margin: -30px;
+  text-align: center;
+  color: white;
+  font-size: 19px;
+  margin-bottom: 10px;
+  padding: 10px; 
+  font-family: 'Montserrat', sans-serif;
+}
+#display-img{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+#display-image{
+  width: 100%;
+  height: 225px;
+  border-radius: 13px;
+  border: 3px solid grey;
+  background-position: center;
+  background-size: cover;
+}
+#instbtn:hover{
+    opacity: 0.7;
+}
+::placeholder {
+ color: white;
+ opacity: 0.9; 
+ }
+ ::-webkit-calendar-picker-indicator {
+   filter: invert(1);
+}
 </style>
