@@ -1,0 +1,172 @@
+int s_array[]={6,13,14,15};
+#include <Stepper.h>
+
+Stepper myStepper(200, 6,7);
+Stepper left1(200,8,9);
+/*Stepper left();
+Stepper left();
+Stepper left();
+Stepper left();*/
+
+void setup() {
+  // set the speed at 60 rpm:
+  myStepper.setSpeed(120);
+  // initialize the serial port:
+  Serial.begin(9600);
+
+  for(int i=0;i<sizeof(s_array);i++)
+  {
+        if(s_array[i]==1)
+    {
+      up();
+    }
+    else if(s_array[i]==2)
+    {
+      up();
+      up();
+    }
+    else if(s_array[i]== 3)
+    {
+      upinv();
+    }
+    else if(s_array[i]==4)
+    {
+      right();
+    }
+    else if(s_array[i]==5)
+    {
+      right();
+      right();
+    }
+    else if(s_array[i]== 6)
+    {
+      rightinv();
+    }
+     else if(s_array[i]==7)
+    {
+      front();
+    }
+    else if(s_array[i]==8)
+    {
+      front();
+      front();
+    }
+    else if(s_array[i]== 9)
+    {
+      frontinv();
+    }
+     else if(s_array[i]==10)
+    {
+      down();
+    }
+    else if(s_array[i]==11)
+    {
+      down();
+      down();
+    }
+    else if(s_array[i]== 12)
+    {
+      downinv();
+    }
+    else if(s_array[i]==13)
+    {
+      left();
+    }
+    else if(s_array[i]==14)
+    {
+      left();
+      left();
+    }
+    else if(s_array[i]== 15)
+    {
+      leftinv();
+    }
+    else if(s_array[i]==16)
+    {
+      back();
+    }
+    else if(s_array[i]==17)
+    {
+      back();
+      back();
+    }
+    else if(s_array[i]== 18)
+    {
+      backinv();
+    }
+    delay(1000);
+  }
+}
+
+
+void up()
+{
+  Serial.println("clockwise");
+  myStepper.step(200);  
+}
+
+void upinv()
+{
+  Serial.println("counterclockwise");
+  myStepper.step(-200);  
+}
+void right()
+{
+  Serial.println("clockwise");
+  myStepper.step(200);  
+}
+
+void rightinv()
+{
+  Serial.println("counterclockwise");
+  myStepper.step(-200);  
+}
+void front()
+{
+  Serial.println("clockwise");
+  myStepper.step(200);  
+}
+
+void frontinv()
+{
+  Serial.println("counterclockwise");
+  myStepper.step(-200);  
+}
+void down()
+{
+  Serial.println("clockwise");
+  myStepper.step(200);  
+}
+
+void downinv()
+{
+  Serial.println("counterclockwise");
+  myStepper.step(-200);  
+}
+void left()
+{
+  Serial.println("clockwise");
+  left1.step(200);  
+}
+
+void leftinv()
+{
+  Serial.println("counterclockwise");
+  left1.step(-200);  
+}
+void back()
+{
+  Serial.println("clockwise");
+  myStepper.step(200);  
+}
+
+void backinv()
+{
+  Serial.println("counterclockwise");
+  myStepper.step(-200);  
+}
+
+
+void loop() {
+
+}
