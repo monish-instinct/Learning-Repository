@@ -1,41 +1,29 @@
 <?php
-    $conn= mysqli_connect('localhost', 'root', '', 'instinct') or die('connection failed' .mysqli_connect_error());
-if($_POST['instinct']=='applynowdiv1'){
-        echo applynowdiv1();
+$con= mysqli_connect('localhost', 'root', '', 'skybase') or die('connection failed' .mysqli_connect_error());
+if($_POST['instgame']=='melboru')
+{
+    $doe=date('Y-m-d');
+    date_default_timezone_set('Asia/Kolkata');
+    $toe=date( 'H:i:s', time () );
+    $ip= getHostByName(getHostName());
+    $field=explode("[s~1]",$_POST['fielddata']);
+    $values=explode("[s~1]",$_POST['fieldvalues']);
+    $phno=$_POST['id'];
+    $cpno=$_POST['cid'];
+    $phno = str_replace("'",'a',$phno);
+    $phno = str_replace('"','h',$phno);
+    $cpno = str_replace("'",'a',$cpno);
+    $cpno = str_replace('"','h',$cpno);
+
+    for ($x = 0; $x < count($field); $x++){
+        $field[$x] = str_replace("'",'>>*7&',$field[$x]);
+        $field[$x] = str_replace('"','>>*7&<<',$field[$x]);
+        $values[$x] = str_replace("'",'>><<*7&',$values[$x]);
+        $values[$x]= str_replace('"','<<>>*7&',$values[$x]);
+        $sql= "INSERT INTO `instinct_user_registered_details` (`phonenumber`,`cphno`, `fieldname`, `details`,`doe`,`toe`,`ip`) VALUES ('$phno','$cpno','$field[$x]','$values[$x]', '$doe', '$toe', '$ip')";
+        $query = mysqli_query($con,$sql);
     }
-function applynowdiv1(){
-    $conn= mysqli_connect('localhost', 'root', '', 'instinct') or die('connection failed' .mysqli_connect_error());
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
-    $charactersLength = strlen($characters);
-    $phno = '';
-    for ($i = 0; $i < 6; $i++)
-        $phno .= $characters[rand(0, $charactersLength - 1)];
-    $fields=['name','surname','dob','gender'];
-    $details1=[];
-        array_push($details1,$_POST['fn']);
-        array_push($details1,$_POST['ln']);
-        array_push($details1,$_POST['dob']);
-        array_push($details1,$_POST['gender']);
-    for ($x = 0; $x <4; $x++) {
-        $sql= "INSERT INTO `application` (`phonenumber`, `fieldname`, `details`) VALUES ('$phno', '$fields[$x]', '$details1[$x]')";
-        $query = mysqli_query($conn,$sql);}
-    return $phno;}
-if($_POST['instinct']=='applynowdiv2'){
-    echo applynowdiv2();
 }
-function applynowdiv2(){
-    $conn= mysqli_connect('localhost', 'root', '', 'instinct') or die('connection failed' .mysqli_connect_error());
-    $phno=$_POST['phno'];
-    $field1=['father','mother','spouse','siblings','child'];
-        $details2=[];
-        array_push($details2,$_POST['father']);
-        array_push($details2,$_POST['mother']);
-        array_push($details2,$_POST['spouse']);
-        array_push($details2,$_POST['siblings']);
-        array_push($details2,$_POST['child']);
-        for ($x = 0; $x <5; $x++) {
-            $sql= "INSERT INTO `application` (`phonenumber`, `fieldname`, `details`) VALUES ('$phno', '$field1[$x]', '$details2[$x]')";
-            $query = mysqli_query($conn,$sql);
-            }
-}
+else
+    echo("Trying to Hack ?");
 ?>
