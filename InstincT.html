@@ -89,7 +89,7 @@
 			</div>
 			<div class="form_wrap select_box">
 				<div class="form_item">
-					<select name="Gender" id="gender">
+					<select name="Gender" id="gen">
 						<option value="" disabled selected>Gender</option>
 						<option>Male</option>
 						<option>Female</option>
@@ -155,7 +155,7 @@
 </div></div>
 
 <!-- Register form division 1 of 3 -->
-<div id="register_form_div1of3" style="display:block">
+<div id="register_form_div1of3" style="display:none">
   <div class="wrapper">
     <div class="form_container">
       <div class="heading">
@@ -169,14 +169,6 @@
           <div id="display-img"><div id="display-image"></div></div>
 				</div>
 			</div>
-      <div class="form_wrap fullname">
-        <div class="form_item">
-          <input type="text" placeholder="Spouse name" id="spouse" > 
-        </div>
-        <div class="form_item">
-          <input type="number" placeholder="No. of child" id="child" min="0" max="5">  
-        </div>
-      </div>
       <div class="btn">
         <button onclick='div1of3todiv4();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
       </div>
@@ -249,16 +241,6 @@ if(a=='ca&'){
   const flcap = fcap.toUpperCase()
   const remainingLetters = arr[0].slice(1)
   const cw = flcap + remainingLetters;
-//   const cwf='';
-//   const arr1=arr[0].split(" ");
-//   for (let i = 0; i < arr1.length; i++) {
-//     const fcap = arr[i][0].charAt(0)
-//     const flcap = fcap.toUpperCase()
-//     const remainingLetters = arr[i].slice(1)
-//     const cw = flcap + remainingLetters;
-//     cwf=''+cw;
-// }
-
   const fcap1 = arr[1].charAt(0)
   const flcap1 = fcap1.toUpperCase()
   const remainingLetters1 = arr[1].slice(1)
@@ -308,6 +290,7 @@ document.getElementById("dob").setAttribute("max", maxDate);
 var a='';
 var instinctid= phno.value;
 var instinctcid= '';
+var check=0;
 var phnoval= /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 function phnotodiv1(){
   ph=phno.value;
@@ -325,16 +308,17 @@ function phnotodiv1(){
       for (var i = 0; i < 10; i++)
         if (ph[i] == "0" || ph[i] == "1" || ph[i] == "2" || ph[i] == "3" || ph[i] == "4" || ph[i] =="5" || ph[i] == "6" || ph
         [i] == "7" || ph[i] == "8" || ph[i] == "9") {
+          check=1;}
+      if(check==1){
       document.getElementById("phno").style.borderColor="grey";
       instinctcid=phno.value;
-      phno.value='';
       document.getElementById("getphno").style.display="none";
       $(".register_form_div1").fadeIn("slow");
-      document.getElementById("register_form_div1").style.display="block";}
-    else{
+      document.getElementById("register_form_div1").style.display="block";}}
+    else if(check==0){
       document.getElementById("phno").style.borderColor="red";
     }
-  }}
+  }
   if(ph.length!=10){
     document.getElementById("phno").style.borderColor="red";
   }
@@ -355,7 +339,7 @@ var date= /^\d{4}[./-]\d{2}[./-]\d{2}$/;
 function div1todiv2(){
   if(fn.value==''){document.getElementById("fn").style.borderColor="red";}
   if(dob.value==''){document.getElementById("dob").style.borderColor="red";}
-  if(gender.value==''){document.getElementById("gender").style.borderColor="red";}
+  if(gen.value==''){document.getElementById("gen").style.borderColor="red";}
   if(fn.value!=''){
     if(fn.value.match(letters)){
     document.getElementById("fn").style.borderColor="grey";}
@@ -369,10 +353,20 @@ function div1todiv2(){
     else{
       document.getElementById("dob").style.borderColor="red";
     }}
-  if(gender.value!=''){document.getElementById("gender").style.borderColor="grey";}
-  if(fn.value!='' && dob.value!='' && gender.value!=''){
+  if(gen.value!=''){document.getElementById("gen").style.borderColor="grey";}
+  if(fn.value!='' && dob.value!='' && gen.value!=''){
     if(fn.value.match(letters)){
       if(dob.value.match(date)){
+        var name= fn.value;
+        var date= dob.value;
+        var gender= gen.value;
+        var div1=name+"[s~1]"+date+"[s~1]"+gender;
+        var inst="name[s~1]dob[s~1]gender";
+        $.ajax({url: "insthash.php", type:"POST",
+      data:{fieldvalues:div1,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
+      fn.value='';
+      dob.value='';
+      gen.value='';
         document.getElementById("register_form_div1").style.display="none";
         document.getElementById("register_form_div2").style.display="block";
       }
@@ -405,6 +399,7 @@ function div2todiv3(){
     }
   }
   if(father.value!='' && mother.value!='' && marriage.value!=''){
+
     if(marriage.value=='married'){
       document.getElementById("register_form_div2").style.display="none";
       document.getElementById("register_form_div2of3").style.display="block";}
