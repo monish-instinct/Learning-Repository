@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="loader">
+        <div class="loadercenter">
+          <div class="loaderring"></div>
+          <span id="loader">Loading...</span>
+      </div>
+      </div>
+    <div>
+</body>
+</html>
+<style>
+    body{
+    color: #262626;
+    }
+    .loadercenter{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .loaderring{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        animation: loaderring 2s linear infinite;
+    }
+    @keyframes loaderring {
+       0%{
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #e65c00;
+       } 
+       50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #18b201;
+       } 
+       100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+       } 
+    }
+    .loaderring:before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(255,255,255,.3);
+    }
+    #loader{
+        color: #737373;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 200px;
+        animation: text 3s ease-in-out infinite;
+    }
+    @keyframes text {
+        50%{
+            color: #262626;
+        }
+    }
+</style>
