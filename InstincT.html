@@ -9,17 +9,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>InstincT Institute of Technology</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/8560/8560639.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="instinct.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-<div style="display: none;">
-  <div id="loader">
+<div id="loader" style="display: block;">
     <div class="loadercenter">
-      <div class="loadinstinct"></div>
+      <div class="loaderring"></div>
       <span id="loader">Loading...</span>
-  </div>
   </div></div>
+<div>
 <div id="navigation" style="display: none;">
   <div class="nav">
     <input id="nav-toggle" type="checkbox">
@@ -46,39 +45,33 @@
     <button type='button' id='btn' onclick="hometostdlogin()"" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif',>students zone</button><br>
     <button type='button' id='btn' onclick="hometoteacherlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif'>teachers zone</button><br>
     <button type='button' id='btn' onclick="hometodeveloperlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif'>developers zone</button><br>
-    <button type='button' id='btn' onclick="hometoadminlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif'>admin</button>
-  </div>
-</div>
-</div>
-<!-- Receving phone number -->
+    <button type='button' id='btn' onclick="hometoadminlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat",sans-serif'>admin</button></div></div></div>
+<!-- test -->
+    <div id="textinandroid" style="display: none;" class="getphno">
+      <div class="wrapper">
+      <div class="form_container">
+              <div class="heading">
+                  <h3 id="android" style="display: block;"></h3>
+                  <h5 id="android1" style="display: block;"></h5></div></div><div></div></div></div>
+<!-- Phone number -->
 <div id="getphno" style="display: block;" class="getphno">
     <div class="wrapper">
 		<div class="form_container">
             <div class="heading">
-                <h3 id="android" style="display: none;"></h3>
-                <h5 id="android1" style="display: none;"></h5><br>
-                <h4>Enter your mobile number for verification</h4>
-              </div>
-			<div class="form_wrap">
-				<div class="form_item">
-					<input type="text" placeholder="Mobile number" id="phno" name="phno">  
-				</div>
-			</div>
+                <h4>Enter your mobile number for verification</h4></div>
+			<div class="form_wrap"><div class="form_item">
+					<input type="text" placeholder="Mobile number" id="phno" name="phno"></div></div>
 			<div class="form_wrap select_box">
 			<div class="btn">
                 <button id='instbtn' onclick='phnotodiv1();' style='background: white;margin: 10px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
-			</div>
-		</div>
-	  </div>
-  </div>
-  </div>
+			</div></div></div></div></div>
 <!-- Register form division 1 -->
 <div id="register_form_div1" style="display: none;">
     <div class="wrapper">
 		<div class="form_container">
       <div class="heading">
-        <h3 id="android" style="display: none;"></h3>
-        <h5 id="android1" style="display: none;"></h5></div>
+        <h3 id="android2" style="display: none;"></h3>
+        <h5 id="android3" style="display: none;"></h5></div>
 				<div class="form_item">
 					<input type="text" placeholder="Full name" name="fn" id="fn" > 
 				</div>
@@ -91,9 +84,81 @@
 				<div class="form_item">
 					<select name="Gender" id="gen">
 						<option value="" disabled selected>Gender</option>
-						<option>Male</option>
-						<option>Female</option>
-						<option>Other</option>
+						<option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Transgender">Transgender</option>
+          <option value="Agender">Agender</option>
+          <option value="Abimegender">Abimegender</option>
+          <option value="Adamasgender">Adamasgender</option>
+          <option value="Aerogender">Aerogender</option>
+          <option value="Aesthetigender">Aesthetigender</option>
+          <option value="Affectugender">Affectugender</option>
+          <option value="Agenderflux">Agenderflux</option>
+          <option value="Alexigender">Alexigender</option>
+          <option value="Aliusgender">Aliusgender</option>
+          <option value="Amaregender">Amaregender</option>
+          <option value="Ambigender">Ambigender</option>
+          <option value="Ambonec">Ambonec</option>
+          <option value="Amicagender">Amicagender</option>
+          <option value="Androgyne">Androgyne</option>
+          <option value="Anesigender">Anesigender</option>
+          <option value="Angenital">Angenital</option>
+          <option value="Anogender">Anogender</option>
+          <option value="Anongende">Anongende</option>
+          <option value="Antegender">Antegender</option>
+          <option value="Anxiegender">Anxiegender</option>
+          <option value="Apagender">Apagender</option>
+          <option value="Apconsugender">Apconsugender</option>
+          <option value="Astergender">Astergender</option>
+          <option value="Astralgender">Astralgender</option>
+          <option value="Autigender">Autigender</option>
+          <option value="Autogender">Autogender</option>
+          <option value="Axigender">Axigender</option>
+          <option value="Bigender">Bigender</option>
+          <option value="Biogender">Biogender</option>
+          <option value="Blurgender">Blurgender</option>
+          <option value="Boyflux">Boyflux</option>
+          <option value="Burstgender">Burstgender</option>
+          <option value="Caelgender">Caelgender</option>
+          <option value="Cassgender">Cassgender</option>
+          <option value="Cassflux">Cassflux</option>
+          <option value="Cavusgender">Cavusgender</option>
+          <option value="Cendgender">Cendgender</option>
+          <option value="Ceterogender">Ceterogender</option>
+          <option value="Ceterofluid">Ceterofluid</option>
+          <option value="Cisgender">Cisgender</option>
+          <option value="Cloudgender">Cloudgender</option>
+          <option value="Collgender">Collgender</option>
+          <option value="Colorgender">Colorgender</option>
+          <option value="Commogender">Commogender</option>
+          <option value="Condigender">Condigender</option>
+          <option value="Deliciagender">Deliciagender</option>
+          <option value="Demifluid">Demifluid</option>
+          <option value="Demiflux">Demiflux</option>
+          <option value="Demigender">Demigender</option>
+          <option value="Domgender">Domgender</option>
+          <option value="Duragender">Duragender</option>
+          <option value="Egogender">Egogender</option>
+          <option value="Epicene">Epicene</option>
+          <option value="Esspigender">Esspigender</option>
+          <option value="Exgender">Exgender</option>
+          <option value="Existigender">Existigender</option>
+          <option value="Femfluid">Femfluid</option>
+          <option value="Femgender">Femgender</option>
+          <option value="Fluidflux">Fluidflux</option>
+          <option value="Gemigender">Gemigender</option>
+          <option value="Genderblank">Genderblank</option>
+          <option value="Genderflow">Genderflow</option>
+          <option value="Genderfluid">Genderfluid</option>
+          <option value="Genderfuzz">Genderfuzz</option>
+          <option value="Genderflux">Genderflux</option>
+          <option value="Genderpuck">Genderpuck</option>
+          <option value="Genderqueer">Genderqueer</option>
+          <option value="Genderwitched">Genderwitched</option>
+          <option value="Girlflux">Girlflux</option>
+          <option value="Healgender">Healgender</option>
+          <option value="Mirrorgender">Mirrorgender</option>
+          <option value="Omnigender">Omnigender</option>
 					</select>  
 				</div>
 			<div class="btn">
@@ -132,6 +197,33 @@
 		</div>
 	  </div>
   </div></div>
+<!-- Register form division 1 of 3 -->
+<div id="register_form_div1of3" style="display:none">
+  <div class="wrapper">
+    <div class="form_container">
+      <div class="heading">
+        <h3 id="android" style="display: none;"></h3>
+        <h5 id="android1" style="display: none;"></h5>
+        <h4>Upload your professional photo</h4>
+      </div>
+      <div class="form_wrap">
+				<div class="form_item">
+					<input type="file" id="img" accept="image/jpeg, image/png, image/jpg" style="color: white;">
+				</div>
+			</div>
+      <div class="form_wrap fullname">
+				<div class="form_item">
+					<div class="btn">
+            <br><br><button onclick='div1of3todiv4();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 25%;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+          </div>
+				</div>
+				<div class="form_item">
+          <div id="display-img"><div id="display-image"></div></div>
+				</div>
+			</div>
+    </div>
+  </div>
+</div>
 <!-- Register form division 2 of 3 -->
 <div id="register_form_div2of3" style="display:none">
   <div class="wrapper">
@@ -145,7 +237,7 @@
         <input type="text" placeholder="Spouse name" id="spouse" > 
       </div>
       <div class="form_item">
-        <input type="number" placeholder="No. of child" id="child" min="0" max="5">  
+        <input type="number" placeholder="No. of child" id="child" min="0" max="3">  
       </div>
     </div>
     <div class="btn">
@@ -153,35 +245,38 @@
     </div>
   </div>
 </div></div>
-
-<!-- Register form division 1 of 3 -->
-<div id="register_form_div1of3" style="display:none">
+<!-- Register form division 3 of 3 -->
+<div id="register_form_div3of3" style="display:none">
   <div class="wrapper">
-    <div class="form_container">
-      <div class="heading">
-        <h3 id="android" style="display: none;"></h3>
-        <h5 id="android1" style="display: none;"></h5>
-        <h4>Upload your image...</h4>
+  <div class="form_container">
+    <div class="heading">
+      <h3 id="android" style="display: none;"></h3>
+      <h5 id="android1" style="display: none;"></h5>
+    </div>
+    <div class="form_wrap fullname">
+      <div class="form_item">
+        <input type="text" placeholder="Child Name" id="child1" style="display:block"> 
       </div>
-      <div class="form_wrap">
-				<div class="form_item">
-					<input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" style="color: white;">
-          <div id="display-img"><div id="display-image"></div></div>
-				</div>
-			</div>
-      <div class="btn">
-        <button onclick='div1of3todiv4();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+      <div class="form_item">
+        <input type="text" placeholder="Child Name" id="child2" style="display:block">  
       </div>
     </div>
+    <div class="form_wrap select_box">
+      <div class="form_item">
+        <input type="text" placeholder="Child Name" id="child3" style="display:block">  
+      </div> 
+    <div class="btn">
+      <button onclick='div2of3to1of3();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+    </div>
   </div>
-</div>
+</div></div></div>
 <!-- Footer side -->
-<div class="footer" style="display: none;" id="foot">
+<div class="footer" style="display: block;" id="foot">
   <div class="social">
-      <a href="https://youtu.be/WuEH265pUy4"id='yt'><i class="fab fa-youtube"></i></a>
-      <a href="https://github.com/Instinctcms" id='git'><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.instagram.com/monish_instinct/" id='insta'><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/monish_instinct" id='twitter'><i class="fab fa-twitter"></i></a>
+      <a href="https://youtu.be/WuEH265pUy4" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      <a href="https://github.com/Instinctcms" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.instagram.com/monish_instinct/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/monish_instinct" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
   </div>
 
   <ul class="list">
@@ -195,10 +290,10 @@
           <a>About</a>
       </li>
       <li>
-          <a href="https://www.termsandconditionsgenerator.com/live.php?token=1FRXb6FdZcslo7I3O39WeycTiOAM7k9H">Terms</a>
+          <a href="https://www.termsandconditionsgenerator.com/live.php?token=1FRXb6FdZcslo7I3O39WeycTiOAM7k9H" target="_blank" rel="noopener noreferrer">Terms</a>
       </li>
       <li>
-          <a href="https://www.privacypolicygenerator.info/live.php?token=1bCANS5P8nhKzSguIVRDPXd2XIbJG5cq">Privacy Policy</a>
+          <a href="https://www.privacypolicygenerator.info/live.php?token=1bCANS5P8nhKzSguIVRDPXd2XIbJG5cq" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
       </li>
   </ul>
   <p class="copyright">
@@ -207,36 +302,47 @@
 </div>
 </body>
 <script>
+// Image size
+// $(document).raedy(function(){
+//   maxfilesize=10*1024*1024;
+//   $('#img').change(function(){
+//     filesize=this.files[0].size;
+//     if(filesize>maxfilesize){
+//       this.setCustomValidity("You can upload files only under 10MB");
+//       this.reportValidity();
+//     }else{
+//       this.setCustomValidity("");
+//     }
+//   });
+// });
+// Preloader
+const load= document.querySelector("#loader");
+window.addEventListener("load",function(){
+  load.style.display = "none"});
+// Image Upload
 const image_input = document.querySelector("#image-input");
-
-image_input.addEventListener("change", function() {
+img.addEventListener("change", function() {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     const uploaded_image = reader.result;
-    document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
-  });
-  reader.readAsDataURL(this.files[0]);
-});
-
+    document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;});
+  reader.readAsDataURL(this.files[0]);});
+// Mobile enter key press
 var input = document.getElementById("phno");
 input.addEventListener("keypress", function(event) {
 if (event.key === "Enter") {
     event.preventDefault();
-    document.getElementById("instbtn").click();
-  }
-});
-function div(){
-    document.getElementById("register_form_div1").style.display="none";
-    document.getElementById("register_form_div2").style.display="block";
-}
+    document.getElementById("instbtn").click();}});
 var url1= window.location.href;
 a=url1.match("ca&")
+var craw='';
+var craw1='';
+var crawcheck=0;
 if(a=='ca&'){
   url1=url1.replace('ca&','')
   $.ajax({url: 'master.php',type: 'GET'})
 .done(function(data){
   const arr=data.split("[s~1]");
-
   const fcap = arr[0].charAt(0)
   const flcap = fcap.toUpperCase()
   const remainingLetters = arr[0].slice(1)
@@ -245,15 +351,17 @@ if(a=='ca&'){
   const flcap1 = fcap1.toUpperCase()
   const remainingLetters1 = arr[1].slice(1)
   const cw1 = flcap1 + remainingLetters1;
+  craw = cw;
+  craw1 = cw1;
+  crawcheck=1;
+  alert('hello');
   document.getElementById("android").innerHTML = cw;
   document.getElementById("android").style.display="block";
   document.getElementById("android1").innerHTML = cw1;
-  document.getElementById("android1").style.display="block";
-});
-}
+  document.getElementById("android1").style.display="block";});}
 const nextURL = url1;
-const nextTitle = 'My new page title';
-const nextState = { additionalInformation: 'Updated the URL with JS' };
+const nextTitle = 'InstincT';
+const nextState = { additionalInformation: 'InstincT Update' };
 window.history.pushState(nextState, nextTitle, nextURL);
 window.history.replaceState(nextState, nextTitle, nextURL);
 const array = url1.split("?");
@@ -263,14 +371,10 @@ if(array[1]=='home'){
   document.getElementById("register_form_div2").style.display="none";
   document.getElementById("navigation").style.display="block";
   document.getElementById("homepage").style.display="block";
-  document.getElementById("foot").style.display="block";
-}
-
+  document.getElementById("foot").style.display="block";}
 if(typeof(array[1]) != "undefined"){
   if(array[1]!='home'){
-    phno.value=array[1];
-  }
-}
+    phno.value=array[1];}}
 var letters = /^[a-zA-Z\s]*$/;
 var date= /^\d{4}[./-]\d{2}[./-]\d{2}$/;
 
@@ -286,6 +390,12 @@ if(tdate<10){
 }
 var maxDate= year+ "-" + month+ "-" +tdate;
 document.getElementById("dob").setAttribute("max", maxDate);
+
+function applicationform(){
+    document.getElementById("register_form_div1").style.display="none";
+    document.getElementById("register_form_div2").style.display="block";
+    document.getElementById("register_form_div2").style.display="block";
+    document.getElementById("register_form_div2").style.display="block";}
 
 var a='';
 var instinctid= phno.value;
@@ -314,7 +424,8 @@ function phnotodiv1(){
       instinctcid=phno.value;
       document.getElementById("getphno").style.display="none";
       $(".register_form_div1").fadeIn("slow");
-      document.getElementById("register_form_div1").style.display="block";}}
+      document.getElementById("register_form_div1").style.display="block";
+    }}
     else if(check==0){
       document.getElementById("phno").style.borderColor="red";
     }
@@ -325,46 +436,48 @@ function phnotodiv1(){
   if(instinctcid==''){
     instinctcid=phno.value;
   }}
-  function datetotext(){
-    document.getElementById("dob").type="text";
-    if(dob.value!=''){
-      document.getElementById("dob").type="date";
-    }
-  }
-  function instinct_call(){
-    $(".icon-burger").click();
-  }
 var letters = /^[a-zA-Z\s]*$/;
 var date= /^\d{4}[./-]\d{2}[./-]\d{2}$/;
 function div1todiv2(){
-  if(fn.value==''){document.getElementById("fn").style.borderColor="red";}
-  if(dob.value==''){document.getElementById("dob").style.borderColor="red";}
+  var datofb=0;
+  dob1=dob.value;
+  firstname=fn.value;
+  if(firstname==''){document.getElementById("fn").style.borderColor="red";}
+  if(dob1==''){document.getElementById("dob").style.borderColor="red";}
   if(gen.value==''){document.getElementById("gen").style.borderColor="red";}
-  if(fn.value!=''){
-    if(fn.value.match(letters)){
+  if(firstname!=''){
+    if(firstname.match(letters)){
     document.getElementById("fn").style.borderColor="grey";}
     else{
       document.getElementById("fn").style.borderColor="red";
     }
   }
-  if(dob.value!=''){
-    if(dob.value.match(date)){
-      document.getElementById("dob").style.borderColor="grey";}
-    else{
-      document.getElementById("dob").style.borderColor="red";
-    }}
+  if(dob1!=''){
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = dd + '-' + mm + '-' + yyyy;
+    console.log(dob1);
+    var dob2 = dob1.split("-");
+    console.log(dob2[0], dob2[1], dob2[2]);
+    var today1 = today.split("-");
+    if (dob2[0] <= today1[2]) {
+      if (dob2[2] <= 31 && dob2[1] <= 12 && dob2[0].length == today1[2].length && dob2[0] <= today1[2]) {document.getElementById("dob").style.borderColor="grey"; datofb=1} 
+      else {document.getElementById("dob").style.borderColor="red"; datofb=0}} 
+      else {document.getElementById("dob").style.borderColor="red"; datofb=0}}
   if(gen.value!=''){document.getElementById("gen").style.borderColor="grey";}
-  if(fn.value!='' && dob.value!='' && gen.value!=''){
-    if(fn.value.match(letters)){
-      if(dob.value.match(date)){
-        var name= fn.value;
+  if(firstname!='' && dob1!='' && gen.value!='' && datofb==1){
+    if(firstname.match(letters)){
+      if(dob1.match(date)){
+        var name= firstname;
         var date= dob.value;
         var gender= gen.value;
         var div1=name+"[s~1]"+date+"[s~1]"+gender;
-        var inst="name[s~1]dob[s~1]gender";
+        var inst="Name[s~1]DOB[s~1]Gender";
         $.ajax({url: "insthash.php", type:"POST",
       data:{fieldvalues:div1,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
-      fn.value='';
+      firstname='';
       dob.value='';
       gen.value='';
         document.getElementById("register_form_div1").style.display="none";
@@ -374,52 +487,67 @@ function div1todiv2(){
   }
 }
 function div2todiv3(){
-  if(father.value==''){document.getElementById("father").style.borderColor="red";}
-  if(mother.value==''){document.getElementById("mother").style.borderColor="red";}
-  if(marriage.value==''){document.getElementById("marriage").style.borderColor="red";}
-  if(father.value!=''){
-    if(father.value.match(letters)){
+  var fathername= father.value;
+  var mothername= mother.value;
+  var maritalstatus= marriage.value;
+  if(fathername==''){document.getElementById("father").style.borderColor="red";}
+  if(mothername==''){document.getElementById("mother").style.borderColor="red";}
+  if(maritalstatus==''){document.getElementById("marriage").style.borderColor="red";}
+  if(fathername!=''){
+    if(fathername.match(letters)){
     document.getElementById("father").style.borderColor="grey";}
     else{
       document.getElementById("father").style.borderColor="red";
     }
   }
-  if(mother.value!=''){
-    if(mother.value.match(letters)){
+  if(mothername!=''){
+    if(mothername.match(letters)){
     document.getElementById("mother").style.borderColor="grey";}
     else{
       document.getElementById("mother").style.borderColor="red";
     }
   }
-  if(marriage.value!=''){
+  if(maritalstatus!=''){
     if(marriage.value.match(letters)){
     document.getElementById("marriage").style.borderColor="grey";}
     else{
       document.getElementById("marriage").style.borderColor="red";
     }
   }
-  if(father.value!='' && mother.value!='' && marriage.value!=''){
-
+  if(fathername!='' && mothername!='' && maritalstatus!=''){
+        var div1=fathername+"[s~1]"+mothername+"[s~1]"+maritalstatus;
+        var inst="Father name[s~1]Mother name[s~1]Marital status";
+        $.ajax({url: "insthash.php", type:"POST",
+      data:{fieldvalues:div1,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
     if(marriage.value=='married'){
       document.getElementById("register_form_div2").style.display="none";
       document.getElementById("register_form_div2of3").style.display="block";}
     else{
       document.getElementById("register_form_div2").style.display="none";
       document.getElementById("register_form_div1of3").style.display="block";
-    }}
-}
+      father.value='';
+      mother.value='';
+      marriage.value='';}}}
 function div2of3to1of3(){
   var spousename=spouse.value;
-  var nfchild=child.value;
+  var nfchild=Number(child.value);
   if(spousename==''){document.getElementById("spouse").style.borderColor="red";}
   if(nfchild==''){document.getElementById("child").style.borderColor="red";}
   if(spousename!='' && nfchild!=''){
+    var div1=spousename+"[s~1]"+nfchild;
+    var inst="Spouse name[s~1]No. of child";
+    $.ajax({url: "insthash.php", type:"POST",
+      data:{fieldvalues:div1,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
+      spouse.value='';
+      child.value='';
   document.getElementById("register_form_div2of3").style.display="none";
   document.getElementById("register_form_div1of3").style.display="block";}
 }
 
 function div1of3todiv4(){
-  alert('instinct')
+  // document.getElementById("register_form_div1of3").style.display="none";
+  // document.getElementById("register_form_div3of3").style.display="block";
+  document.getElementById("display-image").style.borderColor="red";
 }
 </script>
 <style>
@@ -607,11 +735,7 @@ function div1of3todiv4(){
 /* Footer Side */
 .footer{
         padding: 40px 0;
-        background-color: #ffffff;
-        position: absolute;
-        right: 0;
-        left: 0;
-        top: 90%;
+        margin-top: 22%;
     }
     .footer .social{
         text-align: center;
@@ -645,36 +769,20 @@ function div1of3todiv4(){
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .footer ul li a{
-        color: inherit;
         text-decoration: none;
         opacity: 0.8;
+        color: white;
     }
     .footer ul li{
         display: inline-block;
         padding: 0 15px;
     }
-    
-    #yt:hover{
-      color: red;
-      cursor: pointer;
-    }
-    #insta:hover{
-      color: purple;
-      cursor: pointer;
-    }
-    #twitter:hover{
-      color: rgb(33, 163, 206);
-      cursor: pointer;
-    }
-    #git:hover{
-      color: black;
-      cursor: pointer;
-    }
+    .fa-youtube,.fa-github,.fa-instagram,.fa-twitter:before{color: white;}
     .footer .copyright{
         margin-top: 15px;
         text-align: center;
         font-size: 13px;
-        color: #aaa;
+        color: white;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 /* Media query */
@@ -687,22 +795,22 @@ function div1of3todiv4(){
 }}
 
 /* Loader */
-    .loadercenter{
+.loadercenter{
         display: flex;
         text-align: center;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
     }
-    .loadinstinct{
+    .loaderring{
         position: absolute;
         width: 200px;
         height: 200px;
         border-radius: 50%;
-        animation: instinctload 2s linear infinite;
+        animation: loaderring 2s linear infinite;
     }
-    @keyframes instinctload {
-      0%{
+    @keyframes loaderring {
+       0%{
         transform: rotate(0deg);
         box-shadow: 1px 5px 2px #e65c00;
        } 
@@ -713,9 +821,9 @@ function div1of3todiv4(){
        100%{
         transform: rotate(360deg);
         box-shadow: 1px 5px 2px #0456c8;
-       }  
+       } 
     }
-    .instinctload:before{
+    .loaderring:before{
         position: absolute;
         content: '';
         left: 0;
@@ -771,41 +879,12 @@ function div1of3todiv4(){
 }
 
 .form_wrap.fullname .form_item:first-child,
-.form_wrap.select_box .form_item:first-child{
-  margin-right: 4%;
-}
-
-.wrapper .form_container .form_item label{
-  display: block;
-  margin-bottom: 5px;
-}
-
+.form_wrap.select_box .form_item:first-child{margin-right: 4%;}
+.wrapper .form_container .form_item label{display: block;margin-bottom: 5px;}
 .form_item input[type="text"],
-.form_item select{
-  width: 100%;
-  height: 47px;
-  padding: 13px;
-  font-size: 16px;
-  background-color: #262626;
-  border: 3px solid grey;
-  border-radius: 13px;
-  color: white;
-}
-
-.form_item input[type="text"]:focus{
-  border-color: #6271f0;
-}
-.form_item input[type="date"],
-.form_item select{
-  width: 100%;
-  height: 47px;
-  padding: 11px;
-  font-size: 16px;
-  background-color: #262626;
-  border: 3px solid grey;
-  border-radius: 13px;
-  color: #e1e1e1;
-}
+.form_item select{width: 100%;height: 47px;padding: 13px;font-size: 16px;background-color: #262626;border: 3px solid grey;border-radius: 13px;color: white;}
+.form_item input[type="text"]:focus{border-color: #6271f0;}
+.form_item input[type="date"],.form_item select{width: 100%;height: 47px;padding: 11px;font-size: 16px;background-color: #262626;border: 3px solid grey;border-radius: 13px;color: #e1e1e1;}
 
 .form_item input[type="date"]:focus{
   border-color: #6271f0;
@@ -848,19 +927,10 @@ function div1of3todiv4(){
   font-family: 'Montserrat', sans-serif;
 }
 #display-img{
-  display: flex;
-  margin-top: 20px;
-  align-items: center;
-  gap: 10px;
-  flex-direction: column;
+  display: flex;margin-top:-17px;align-items: center;gap: 10px;flex-direction: column;
 }
 #display-image{
-  width: 100%;
-  height: 225px;
-  border-radius: 13px;
-  border: 3px solid grey;
-  background-position: center;
-  background-size: cover;
+  width: 100%;height: 120px;border-radius: 13px;border: 3px solid grey;background-position: center;background-size: cover;
 }
 #instbtn:hover{
     opacity: 0.7;
