@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"><title>InstincT Institute of Technology</title><link rel="icon" href="https://cdn-icons-png.flaticon.com/512/8560/8560639.png"><script src="instinct.js"></script></head>
+<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"><title>InstincT Institute of Technology</title><link rel="icon" href="https://cdn-icons-png.flaticon.com/512/8560/8560639.png"><script src="instinct.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"></head>
 <body>
-<div id="loader" style="display: block;"><div class="loadercenter"><div class="loaderring"></div><span id="loader">Loading...</span></div></div><div>
+<div id="loader" style="display: block;"><div class= "loadercenter"><div class="loaderring"></div><span id="loader">Loading...</span></div></div><div>
 <div id="navigation" style="display: none;">
   <div class="nav">
     <input id="nav-toggle" type="checkbox">
@@ -23,21 +23,67 @@
   </div> 
 </div>
 </div>
-<!-- Home Page -->
-<div>
-<div id="homepage" style="display: none;" class="homepage">
-  <div class="home_container">
-    <button type='button' id='btn' onclick="hometostdlogin()"" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif',>students zone</button><br>
-    <button type='button' id='btn' onclick="hometoteacherlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif'>teachers zone</button><br>
-    <button type='button' id='btn' onclick="hometodeveloperlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat", sans-serif'>developers zone</button><br>
-    <button type='button' id='btn' onclick="hometoadminlogin()" style='padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;margin:0 auto;background-position: right center;color:black;  text-decoration: none;font-weight: 1000; border:3px solid white; width: 255px;font-family: "Montserrat",sans-serif'>admin</button></div></div></div>
-<!-- test -->
-    <div id="textinandroid" style="display: none;" class="getphno">
-      <div class="wrapper">
-      <div class="form_container">
-              <div class="heading">
-                  <h3 id="android" style="display: block;"></h3>
-                  <h5 id="android1" style="display: block;"></h5></div></div><div></div></div></div>
+<!-- Common password message box -->
+<div id="pmsgbox" style="display: none;">
+  <div class="msg-box-wrapper">
+  <div class="msg-box-form_container">
+          <div class="msg-box-heading">
+            <img src="https://cdn-icons-png.flaticon.com/512/6897/6897039.png" alt="Error" class="tick-image">
+            <h2 class="message-box-title">Unfortunate Error!</h2><br>
+            <div style="text-align: left; font-family: 'Poppins', sans-serif;font-size: 20px;padding: 20px;">
+              <i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Password did not match
+            </div>
+            <button class="close-button" onclick="instbox()"><strong>Close</strong></button>
+          </div>
+              </div></div></div>
+<!-- Wallet password message box -->
+<div id="wpmsgbox" style="display: none;">
+  <div class="msg-box-wrapper">
+  <div class="msg-box-form_container">
+          <div class="msg-box-heading">
+            <img src="https://cdn-icons-png.flaticon.com/512/6897/6897039.png" alt="Error" class="tick-image">
+            <h2 class="message-box-title">Unfortunate Error!</h2><br>
+            <div style="text-align: left; font-family: 'Courier New', Courier, monospace;font-size: 20px;padding: 20px;">
+              <i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain more than 6 characters
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain alphabets
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain digits
+            </div>
+            <button class="close-button" onclick="instbox()"><strong>Close</strong></button>
+          </div>
+              </div></div></div>
+<!-- Secure password message box -->
+<div id="spmsgbox" style="display: none;">
+  <div class="msg-box-wrapper">
+  <div class="msg-box-form_container">
+          <div class="msg-box-heading">
+            <img src="https://cdn-icons-png.flaticon.com/512/6897/6897039.png" alt="Error" class="tick-image">
+            <h2 class="message-box-title">Unfortunate Error!</h2><br>
+            <div style="text-align: left; font-family: 'Courier New', Courier, monospace;font-size: 20px;padding: 20px;">
+              <i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain more than 8 characters
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain alphabets
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain digits
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain special character
+            </div>
+            <button class="close-button" onclick="instbox()"><strong>Close</strong></button>
+          </div>
+              </div></div></div>
+  <!-- Final password message box -->
+<div id="fpmsgbox" style="display: none;">
+  <div class="msg-box-wrapper">
+  <div class="msg-box-form_container">
+          <div class="msg-box-heading">
+            <img src="https://cdn-icons-png.flaticon.com/512/6897/6897039.png" alt="Error" class="tick-image">
+            <h2 class="message-box-title">Unfortunate Error!</h2><br>
+            <div style="text-align: left; font-family: 'Courier New', Courier, monospace;font-size: 20px;padding: 20px;">
+              <i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain more than 8 characters
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain alphabets
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain digits
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain uppercase character
+              <br><br><i class="fa fa-arrow-circle-right swal-galert-icon" aria-hidden="true"></i>&nbsp;Should contain special character
+            </div>
+            <button class="close-button" onclick="instbox()"><strong>Close</strong></button>
+          </div>
+              </div></div></div>
 <!-- Phone number -->
 <div id="getphno" style="display: block;" class="getphno">
     <div class="wrapper">
@@ -51,7 +97,7 @@
                 <button id='instbtn' onclick='phnotodiv1();' style='background: white;margin: 10px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
 			</div></div></div></div></div>
 <!-- Register form division 1 -->
-<div id="register_form_div1" style="display: none;">
+<div id="customerdetails" style="display: none;">
     <div class="wrapper">
 		<div class="form_container">
       <div class="heading">
@@ -78,7 +124,7 @@
 	  </div>
   </div></div>
 <!-- Register form division 2 -->
-<div id="register_form_div2" style="display:none">
+<div id="familydetails" style="display:none">
     <div class="wrapper">
 		<div class="form_container">
       <div class="heading">
@@ -93,22 +139,33 @@
 					<input type="text" placeholder="Mother Name" id="mother">  
 				</div>
 			</div>
+    <div class="form_wrap fullname">
+      <div class="form_item">
+        <select name="siblings" id="siblings">
+          <option value="" disabled selected>No. of siblings</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select> 
+      </div>
+      <div class="form_item">
+        <select name="marital_status" id="marriage">
+          <option value="" disabled selected>Marital status</option>
+          <option value="married">Married</option>
+          <option value="not married">Not Married</option>
+        </select>  
+      </div>
+    </div>
 			<div class="form_wrap select_box">
-				<div class="form_item">
-					<select name="marital_status" id="marriage">
-						<option value="" disabled selected>Marital status</option>
-						<option value="married">Married</option>
-						<option value="not married">Not Married</option>
-					</select>  
-				</div>
 			<div class="btn">
-			  <button onclick='div2todiv3();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+			  <button onclick='familydetails();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
 			</div>
 		</div>
 	  </div>
   </div></div>
-<!-- Register form division 1 of 3 -->
-<div id="register_form_div1of3" style="display:none">
+<!-- Profile Photo -->
+<div id="profilephoto" style="display:none">
   <div class="wrapper">
     <div class="form_container">
       <div class="heading">
@@ -129,8 +186,30 @@
 				</div>
 				<div class="form_item">
           <div id="display-img"><div id="display-image"></div></div></div></div></div></div></div>
+<!-- Aadhar card -->
+<div id="aadharcard" style="display:none">
+  <div class="wrapper">
+    <div class="form_container">
+      <div class="heading">
+        <h3 id="android" style="display: none;"></h3>
+        <h5 id="android1" style="display: none;"></h5>
+        <h4>Upload your Aadhar card</h4>
+      </div>
+      <div class="form_wrap">
+				<div class="form_item">
+					<input type="file" id="aadhar" accept="image/jpeg, image/png, image/jpg" style="color: white;">
+				</div>
+			</div>
+      <div class="form_wrap fullname">
+				<div class="form_item">
+					<div class="btn">
+            <br><br><button onclick='aadhar();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 25%;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+          </div>
+				</div>
+				<div class="form_item">
+          <div id="display-aa"><div id="display-aadhar"></div></div></div></div></div></div></div>
 <!-- Register form division 2 of 3 -->
-<div id="register_form_div2of3" style="display:none">
+<div id="spousedetails" style="display:none">
   <div class="wrapper">
   <div class="form_container">
     <div class="heading">
@@ -142,7 +221,13 @@
         <input type="text" placeholder="Spouse name" id="spouse" > 
       </div>
       <div class="form_item">
-        <input type="number" placeholder="No. of child" id="child" min="0" max="3">  
+        <select name="childcount" id="child">
+          <option value="" disabled selected>No. of child</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>  
       </div>
     </div>
     <div class="btn">
@@ -150,8 +235,8 @@
     </div>
   </div>
 </div></div>
-<!-- Register form division 3 of 3 -->
-<div id="register_form_div3of3" style="display:none">
+<!-- 1 child -->
+<div id="1child" style="display:none">
   <div class="wrapper">
   <div class="form_container">
     <div class="heading">
@@ -160,18 +245,205 @@
     </div>
     <div class="form_wrap fullname">
       <div class="form_item">
-        <input type="text" placeholder="Child Name" id="child1" style="display:block"> 
+        <input type="text" placeholder="Child Name" id="child1of1" style="display:block"> 
+      </div>
+      <div class="btn">
+        <button onclick='div2of3to1of3();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+      </div>
+    </div>
+</div></div></div>
+<!-- Register form division 3 of 2 child -->
+<div id="2child" style="display:none">
+  <div class="wrapper">
+  <div class="form_container">
+    <div class="heading">
+      <h3 id="android" style="display: none;"></h3>
+      <h5 id="android1" style="display: none;"></h5>
+    </div>
+    <div class="form_wrap fullname">
+      <div class="form_item">
+        <input type="text" placeholder="1st Child's Name" id="child1of2" style="display:block"> 
       </div>
       <div class="form_item">
-        <input type="text" placeholder="Child Name" id="child2" style="display:block">  
+        <input type="text" placeholder="2nd Child's Name" id="child2of2" style="display:block">  
+      </div>
+    </div>
+    <div class="btn">
+      <button onclick='div2of3to1of3();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+    </div>
+</div></div></div>
+<!-- Register form division 3 of 3 child -->
+<div id="3child" style="display:none">
+  <div class="wrapper">
+  <div class="form_container">
+    <div class="heading">
+      <h3 id="android" style="display: none;"></h3>
+      <h5 id="android1" style="display: none;"></h5>
+    </div>
+    <div class="form_wrap fullname">
+      <div class="form_item">
+        <input type="text" placeholder="1st Child's Name" id="child1of3" style="display:block"> 
+      </div>
+      <div class="form_item">
+        <input type="text" placeholder="2nd Child's Name" id="child2of3" style="display:block">  
       </div>
     </div>
     <div class="form_wrap select_box">
       <div class="form_item">
-        <input type="text" placeholder="Child Name" id="child3" style="display:block">  
+        <input type="text" placeholder="3rd Child's Name" id="child3" style="display:block">  
       </div> 
     <div class="btn">
       <button onclick='div2of3to1of3();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+    </div>
+  </div>
+</div></div></div>
+<!-- passandcpass -->
+<div id="passandcpass" style="display: none;">
+  <div class="wrapper">
+  <div class="form_container">
+    <div class="heading">
+      <h4>Set up your password</h4><br>
+      <div class="form_item">
+        <input type="password" placeholder="Password" name="pass" id="pass" >
+      </div>
+    <div class="form_wrap">
+      <div class="form_item">
+        <input type="text" placeholder="Confirm Password" name="cpass" id="cpass" >
+      </div>
+    </div>
+    <div class="btn">
+              <button onclick='passandcpass();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+    </div>
+  </div>
+  </div>
+</div></div>
+<!-- walletpass -->
+<div id="walletpass" style="display: none;">
+  <div class="wrapper">
+  <div class="form_container">
+    <div class="heading">
+      <h4>Set up your wallet password</h4><br>
+      <div class="form_item">
+        <input type="password" placeholder="Wallet Password" name="wpass" id="wpass" >
+      </div>
+    <div class="form_wrap">
+      <div class="form_item">
+        <input type="text" placeholder="Confirm Wallet Password" name="wcpass" id="wcpass" >
+      </div>
+    </div>
+    <div class="btn">
+              <button onclick='walletpassword();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+    </div>
+  </div>
+  </div>
+</div></div> 
+<!-- securepass -->
+<div id="securepass" style="display: none ;">
+  <div class="wrapper">
+  <div class="form_container">
+    <div class="heading">
+      <h4>Set up your secure password</h4><br>
+      <div class="form_item">
+        <input type="password" placeholder="Secure Password" name="spass" id="spass" >
+      </div>
+    <div class="form_wrap">
+      <div class="form_item">
+        <input type="text" placeholder="Confirm Secure Password" name="scpass" id="scpass" >
+      </div>
+    </div>
+    <div class="btn">
+              <button onclick='securepassword();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+    </div>
+  </div>
+  </div>
+</div></div> 
+<!-- finalpass -->
+<div id="finalpass" style="display: none;">
+  <div class="wrapper">
+  <div class="form_container">
+    <div class="heading">
+      <h4>Set up your final password</h4><br>
+      <div class="form_item">
+        <input type="password" placeholder="Final Password" name="fpass" id="fpass" >
+      </div>
+    <div class="form_wrap">
+      <div class="form_item">
+        <input type="text" placeholder="Confirm Final Password" name="fcpass" id="fcpass" >
+      </div>
+    </div>
+    <div class="btn">
+              <button onclick='finalpassword();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
+    </div>
+  </div>
+  </div>
+</div></div>
+<!-- Government details -->
+<div id="government" style="display:none">
+  <div class="wrapper">
+  <div class="form_container">
+    <div class="heading">
+    <h4>Government Details</h4>
+    </div>
+    <div class="form_wrap fullname">
+      <div class="form_item">
+        <select name="Community" id="community">
+          <option value="" disabled selected>Community</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form_item">
+        <select name="Religion" id="religion">
+          <option value="" disabled selected>Religion</option>
+          <option value="Hinduism">Hinduism</option>
+          <option value="Agnostic">Agnostic</option>
+          <option value="Atheist">Atheist</option>
+          <option value="Baha'i">Baha'i</option>
+          <option value="Buddhism">Buddhism</option>
+          <option value="Cao Dai">Cao Dai</option>
+          <option value="Chinese traditional religion">Chinese traditional religion</option>
+          <option value="Christianity">Christianity</option>
+          <option value="Islam">Islam</option>
+          <option value="Jainism">Jainism</option>
+          <option value="Juche">Juche</option>
+          <option value="Judaism">Judaism</option>
+          <option value="Neo-Paganism">Neo-Paganism</option>
+          <option value="Nonreligious">Nonreligious</option>
+          <option value="Rastafarianism">Rastafarianism</option>
+          <option value="Secular">Secular</option>
+          <option value="Shinto">Shinto</option>
+          <option value="Sikhism">Sikhism</option>
+          <option value="Spiritism">Spiritism</option>
+          <option value="Tenrikyo">Tenrikyo</option>
+          <option value="Unitarian-Universalism">Unitarian-Universalism</option>
+          <option value="Zoroastrianism">Zoroastrianism</option>
+          <option value="primal-indigenous">primal-indigenous</option>
+          <option value="Other">Other</option>
+        </select>  
+      </div>
+    </div>
+    <div class="form_wrap fullname">
+      <div class="form_item">
+        <select name="Caste" id="castee">
+          <option value="" disabled selected>Caste</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form_item">
+        <select name="Sub Caste" id="subcaste">
+          <option value="" disabled selected>Sub Caste</option>
+          <option value="Other">Other</option>
+        </select>  
+      </div>
+    </div>
+    <div class="form_wrap fullname">
+      <div class="form_item">
+        <select name="Division" id="division">
+          <option value="" disabled selected>Division</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    <div class="btn">
+      <button onclick='government();' id="instbtn" style='background: #fff;margin: -2px;padding: 15px 45px;text-align: center;text-transform: uppercase;transition: 0.5s;background-size: 200% auto;border-radius: 10px;display: block;background-position: right center;color: #000;  text-decoration: none;border: 1px solid white;'>next</button>
     </div>
   </div>
 </div></div></div>
@@ -206,11 +478,20 @@
 </div>
 </body>
 <script>
+function instbox(){
+  document.getElementById("pmsgbox").style.display="none";
+  document.getElementById("wpmsgbox").style.display="none";
+  document.getElementById("spmsgbox").style.display="none";
+  document.getElementById("fpmsgbox").style.display="none";
+}
+// Inspect Block
+ document.addEventListener("contextmenu", function(e){
+  e.preventDefault();}); 
+// Name validation
 function instname(msg, zeus, wizard) 
 {
   var name = msg.replace(".", " ").trim();
     msg = name;
-    console.log(msg)
     var namel = msg.length;
         if (msg == "")
         document.getElementById(zeus).style.borderColor="red";
@@ -244,6 +525,29 @@ function instname(msg, zeus, wizard)
             wizard=0;}
           }
           return [wizard,name];
+        }
+function passwordcheck(msg, zeus, wizard, archer, golem, goblin) 
+{
+    var name = msg
+    msg = name;
+    var namel = msg.length;
+        if (msg == "")
+        document.getElementById(zeus).style.borderColor="red";
+        else 
+        {
+            if (namel >6) 
+            {
+                for (var i = 0; i < namel; i++) 
+                {if (name[i] == "a" || name[i] == "b" || name[i] == "c" || name[i] == "d" || name[i] == "e" || name[i] == "f" || name[i] == "g" || name[i] == "h" || name[i] == "i" || name[i] == "j" || name[i] == "k" || name[i] == "l" || name[i] == "m" || name[i] == "n" || name[i] == "o" || name[i] == "p" || name[i] == "q" || name[i] == "r" || name[i] == "s" || name[i] == "t" || name[i] == "u" ||name[i] == "v" || name[i] == "w" || name[i] == "x" || name[i] == "y" || name[i] =="z"){wizard=wizard+1;}
+                  else if(name[i] == "0" || name[i] == "1" || name[i] == "2" || name[i] == "3" || name[i] == "4" || name[i] == "5" || name[i] == "6" || name[i] == "7" || name[i] == "8" || name[i] == "9"){archer=archer+1;}
+                  else if (name[i] == "A" || name[i] == "B" || name[i] == "C" || name[i] == "D" || name[i] == "E" || name[i] == "F" || name[i] == "G" || name[i] == "H" || name[i] == "I" || name[i] == "J" || name[i] == "K" || name[i] == "L" || name[i] == "M" || name[i] == "N" || name[i] == "O" || name[i] == "P" || name[i] == "Q" || name[i] == "R" || name[i] == "S" || name[i] == "T" || name[i] == "U" ||name[i] == "V" || name[i] == "W" || name[i] == "X" || name[i] == "Y" || name[i] =="Z"){
+                        goblin=goblin+1;
+                      }
+                    else if (name[i] != "a" || name[i] != "b" || name[i] != "c" || name[i] != "d" || name[i] != "e" || name[i] != "f" || name[i] != "g" || name[i] != "h" || name[i] != "i" || name[i] != "j" || name[i] != "k" || name[i] != "l" || name[i] != "m" || name[i] != "n" || name[i] != "o" || name[i] != "p" || name[i] != "q" || name[i] != "r" || name[i] != "s" || name[i] != "t" || name[i] != "u" ||name[i] != "v" || name[i] != "w" || name[i] != "x" || name[i] != "y" || name[i] !="z" || name[i] != "0" || name[i] != "1" || name[i] != "2" || name[i] != "3" || name[i] != "4" || name[i] != "5" || name[i] != "6" || name[i] != "7" || name[i] != "8" || name[i] != "9" || name[i] != "A" || name[i] != "B" || name[i] != "C" || name[i] != "D" || name[i] != "E" || name[i] != "F" || name[i] != "G" || name[i] != "H" || name[i] != "I" || name[i] != "J" || name[i] != "K" || name[i] != "L" || name[i] != "M" || name[i] != "N" || name[i] != "O" || name[i] != "P" || name[i] != "Q" || name[i] != "R" || name[i] != "S" || name[i] != "T" || name[i] != "U" ||name[i] != "V" || name[i] != "W" || name[i] != "X" || name[i] != "Y" || name[i] !="Z"){golem=golem+1;}}}
+            else{
+            document.getElementById(zeus).style.borderColor="red";}
+          }
+          return [name, wizard, archer, golem, goblin];
         }
 // Preloader
 const load= document.querySelector("#loader");
@@ -285,6 +589,43 @@ img.addEventListener("change", function() {
     const uploaded_image = reader.result;
     document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;});
   reader.readAsDataURL(this.files[0]);});
+// Aadhar card compress
+let resizedImageUrl = '';
+const awidth=1000;
+    let ainput= document.getElementById('aadhar')
+    ainput.addEventListener('change', (event) =>{
+        let image_file=event.target.files[0]
+
+        let reader=new FileReader
+        reader.readAsDataURL(image_file)
+        reader.onload=(event) =>{
+            let image_url=event.target.result
+            let image=document.createElement('img')
+            image.src= image_url
+            image.onload=(e) =>{
+                let canvas=document.createElement('canvas')
+                let ratio= awidth / e.target.width
+                canvas.width=awidth
+                canvas.height=e.target.height * ratio
+
+                const context=canvas.getContext('2d')
+                context.drawImage(image, 0, 0, canvas.width, canvas.height)
+                let new_image_url= context.canvas.toDataURL('image/jpeg', 90)
+                 
+                let new_image=document.createElement('img')
+                new_image.src= new_image_url
+                resizedImageUrl=new_image.src;
+                console.log(resizedImageUrl)
+        }}
+    });
+const file_input = document.querySelector("#aadhar");
+file_input.addEventListener("change", function() {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    const imageaa = reader.result;
+    document.querySelector("#display-aadhar").style.backgroundImage = `url(${imageaa})`;});
+  reader.readAsDataURL(this.files[0]);});
+
 // Mobile enter key press
 var instbtn = document.getElementById("phno");
 instbtn.addEventListener("keypress", function(event) {
@@ -324,8 +665,8 @@ window.history.replaceState(nextState, nextTitle, nextURL);
 const array = url1.split("?");
 if(array[1]=='home'){
   document.getElementById("getphno").style.display="none";
-  document.getElementById("register_form_div1").style.display="none";
-  document.getElementById("register_form_div2").style.display="none";
+  document.getElementById("customerdetails").style.display="none";
+  document.getElementById("familydetails").style.display="none";
   document.getElementById("navigation").style.display="block";
   document.getElementById("homepage").style.display="block";
   document.getElementById("foot").style.display="block";}
@@ -349,10 +690,10 @@ var maxDate= year+ "-" + month+ "-" +tdate;
 document.getElementById("dob").setAttribute("max", maxDate);
 
 function applicationform(){
-    document.getElementById("register_form_div1").style.display="none";
-    document.getElementById("register_form_div2").style.display="block";
-    document.getElementById("register_form_div2").style.display="block";
-    document.getElementById("register_form_div2").style.display="block";}
+    document.getElementById("customerdetails").style.display="none";
+    document.getElementById("familydetails").style.display="block";
+    document.getElementById("familydetails").style.display="block";
+    document.getElementById("familydetails").style.display="block";}
 
 var a='';
 var instinctid= phno.value;
@@ -380,8 +721,8 @@ function phnotodiv1(){
       document.getElementById("phno").style.borderColor="grey";
       instinctcid=phno.value;
       document.getElementById("getphno").style.display="none";
-      $(".register_form_div1").fadeIn("slow");
-      document.getElementById("register_form_div1").style.display="block";
+      $(".customerdetails").fadeIn("slow");
+      document.getElementById("customerdetails").style.display="block";
     }}
     else if(check==0){
       document.getElementById("phno").style.borderColor="red";
@@ -412,7 +753,7 @@ function div1todiv2(){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
-    var yyyy = today.getFullYear() - 16;
+    var yyyy = today.getFullYear() - 7;
     today = dd + '-' + mm + '-' + yyyy;
     var dob2 = dob1.split("-");
     console.log(dob2[0], dob2[1], dob2[2]);
@@ -433,16 +774,18 @@ function div1todiv2(){
       firstname='';
       dob.value='';
       gen.value='';
-        document.getElementById("register_form_div1").style.display="none";
-        document.getElementById("register_form_div2").style.display="block";}}
-function div2todiv3(){
+        document.getElementById("customerdetails").style.display="none";
+        document.getElementById("passandcpass").style.display="block";}}
+function familydetails(){
   var fathername= father.value;
   var mothername= mother.value;
+  var naruto='';
   checkid=0;
   checkid1=0;
   var maritalstatus= marriage.value;
   if(fathername==''){document.getElementById("father").style.borderColor="red";}
   if(mothername==''){document.getElementById("mother").style.borderColor="red";}
+  if(siblings.value==''){document.getElementById("siblings").style.borderColor="red";}
   if(maritalstatus==''){document.getElementById("marriage").style.borderColor="red";}
   if(fathername!=''){
     barbarian=instname(fathername, 'father', 0)
@@ -454,32 +797,36 @@ function div2todiv3(){
     checkid1=barbarian[0]
     mothername=barbarian[1]
   }
+  if(siblings.value!=''){
+    document.getElementById("siblings").style.borderColor="grey";
+    naruto=siblings.value;
+  }
   if(maritalstatus!=''){
     document.getElementById("marriage").style.borderColor="grey";}
   if(fathername!='' && mothername!='' && maritalstatus!='' && checkid==1 && checkid1==1){
-        var div1=fathername+"[s~1]"+mothername+"[s~1]"+maritalstatus;
-        var inst="Father name[s~1]Mother name[s~1]Marital status";
+        var div1=fathername+"[s~1]"+mothername+"[s~1]"+naruto+"[s~1]"+maritalstatus;
+        var inst="Father name[s~1]Mother name[s~1]No. of child[s~1]Marital status";
         $.ajax({url: "insthash.php", type:"POST",
       data:{fieldvalues:div1,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
-    if(marriage.value=='married'){
-      document.getElementById("register_form_div2").style.display="none";
-      document.getElementById("register_form_div2of3").style.display="block";}
-    else{
-      document.getElementById("register_form_div2").style.display="none";
-      document.getElementById("register_form_div1of3").style.display="block";
+      document.getElementById("familydetails").style.display="none";
+      document.getElementById("aadharcard").style.display="block";
       father.value='';
       mother.value='';
-      marriage.value='';}}}
+      marriage.value='';}}
 function div2of3to1of3(){
   var spousename=spouse.value;
-  var nfchild=Number(child.value);
+  var nfchild=child.value;
+  var ben='';
   checkid=0;
   if(spousename==''){document.getElementById("spouse").style.borderColor="red";}
+  if(nfchild==''){document.getElementById("child").style.borderColor="red";}
   if(spousename!=''){
     barbarian=instname(spousename, 'spouse', 0)
     checkid=barbarian[0]
-    spousename=barbarian[1]
-  }
+    spousename=barbarian[1]}
+  if(nfchild!=''){
+    document.getElementById("child").style.borderColor="grey";
+    ben=nfchild;}
   if(spousename!='' && nfchild!='' && checkid==1){
     var div1=spousename+"[s~1]"+nfchild;
     var inst="Spouse name[s~1]No. of child";
@@ -487,9 +834,17 @@ function div2of3to1of3(){
       data:{fieldvalues:div1,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
       spouse.value='';
       child.value='';
-  document.getElementById("register_form_div2of3").style.display="none";
-  document.getElementById("register_form_div1of3").style.display="block";}
-}
+      if(ben=='0'){document.getElementById("familydetailsof3").style.display="none";
+  document.getElementById("customerdetailsof3").style.display="block";}
+  if(ben=='1'){
+    document.getElementById("familydetailsof3").style.display="none";
+    document.getElementById("1child").style.display="block";}
+  if(ben=='2'){
+    document.getElementById("familydetailsof3").style.display="none";
+    document.getElementById("2child").style.display="block";}
+  if(ben=='3'){
+    document.getElementById("familydetailsof3").style.display="none";
+    document.getElementById("3child").style.display="block";}}}
 // Profile photo function
 function image(){
   if(imageurl==''){
@@ -509,6 +864,189 @@ function datetotext(){
     document.getElementById("dob").type='text';
   }
   else if(dtt!=''){document.getElementById("dob").type='date';}
+}
+function passandcpass(){
+password=pass.value;
+cpassword=cpass.value;
+if(password==''){document.getElementById("pass").style.borderColor="red";}
+if(cpassword==''){document.getElementById("cpass").style.borderColor="red";}
+if(password!='' && cpassword!=''){
+  var alien=password+"[s~1]"+cpassword;
+    var inst="Password[s~1]Confirm Password";
+    $.ajax({url: "insthash.php", type:"POST",
+      data:{fieldvalues:alien,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
+    if(password!=cpassword){
+      pass.value='';
+      cpass.value='';
+      document.getElementById("wpmsgbox").style.display="block";
+      document.getElementById("pass").style.borderColor="red";
+      document.getElementById("cpass").style.borderColor="red";
+    }
+    if(password==cpassword){
+      document.getElementById("passandcpass").style.display="none";
+        document.getElementById("government").style.display="block";}}}
+function walletpassword(){
+password=wpass.value;
+cpassword=wcpass.value;
+var check=0;
+if(password==''){document.getElementById("wpass").style.borderColor="red";}
+if(cpassword==''){document.getElementById("wcpass").style.borderColor="red";}
+if(password!='' && cpassword!=''){
+    var alien=password+"[s~1]"+cpassword;
+    var inst="Wallet Password[s~1]Confirm Wallet Password";
+    $.ajax({url: "insthash.php", type:"POST",
+      data:{fieldvalues:alien,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
+if(password!=''){
+  barbarian=passwordcheck(password,'wpass',0,0,0,0)
+  password=barbarian[0]
+  scase=barbarian[1]
+  digit=barbarian[2]
+  spchar=barbarian[3]
+  ucase=barbarian[4]
+  if(scase>0 && digit>0 && spchar==0 && ucase==0){
+    document.getElementById("wpass").style.borderColor="grey";
+    check=1;
+  }
+  else{
+    document.getElementById("wpmsgbox").style.display="block";
+    wpass.value='';
+    wcpass.value='';
+  }
+  if(password==cpassword && check==1){
+    document.getElementById("wpmsgbox").style.display="none";
+    document.getElementById("wpass").style.borderColor="grey";
+    document.getElementById("wcpass").style.borderColor="grey";
+    document.getElementById("walletpass").style.display="none";
+    document.getElementById("securepass").style.display="block";
+  }
+  else{
+    document.getElementById("wpass").style.borderColor="red";
+    document.getElementById("wcpass").style.borderColor="red";
+    document.getElementById("wpmsgbox").style.display="block";
+    wpass.value='';
+    wcpass.value='';
+}
+}} 
+else{
+  document.getElementById("wpass").style.borderColor="red";
+    document.getElementById("wcpass").style.borderColor="red";
+}
+}
+function securepassword(){
+password=spass.value;
+cpassword=scpass.value;
+var check=0;
+if(password==''){document.getElementById("spass").style.borderColor="red";}
+if(cpassword==''){document.getElementById("scpass").style.borderColor="red";}
+if(password!='' && cpassword!=''){
+  var alien=password+"[s~1]"+cpassword;
+        var inst="Secure Password[s~1]Confirm Secure Password";
+        $.ajax({url: "insthash.php", type:"POST",
+          data:{fieldvalues:alien,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
+if(password!=''){
+  barbarian=passwordcheck(password,'spass',0,0,0,0)
+  password=barbarian[0]
+  scase=barbarian[1]
+  digit=barbarian[2]
+  spchar=barbarian[3]
+  ucase=barbarian[4]
+  if(scase>0 && digit>0 && spchar>0 && ucase==0){
+    document.getElementById("spass").style.borderColor="grey";
+    check=1;
+  }
+  else{
+    document.getElementById("spmsgbox").style.display="block";
+    spass.value='';
+    scpass.value='';
+  }
+  if(password==cpassword && check==1){
+    document.getElementById("spmsgbox").style.display="none";
+    document.getElementById("spass").style.borderColor="grey";
+    document.getElementById("scpass").style.borderColor="grey";
+    document.getElementById("securepass").style.display="none";
+    document.getElementById("finalpass").style.display="block";
+  }
+  else{
+    document.getElementById("spass").style.borderColor="red";
+    document.getElementById("scpass").style.borderColor="red";
+    document.getElementById("spmsgbox").style.display="block";
+    spass.value='';
+    scpass.value='';
+}
+}} 
+else{
+  document.getElementById("spass").style.borderColor="red";
+    document.getElementById("scpass").style.borderColor="red";
+}
+}
+function finalpassword(){
+password=fpass.value;
+cpassword=fcpass.value;
+var check=0;
+if(password==''){document.getElementById("fpass").style.borderColor="red";}
+if(cpassword==''){document.getElementById("fcpass").style.borderColor="red";}
+if(password!=''){
+  barbarian=passwordcheck(password,'fpass',0,0,0,0)
+  password=barbarian[0];scase=barbarian[1];digit=barbarian[2];spchar=barbarian[3];ucase=barbarian[4];
+  if(scase>0 && digit>0 && spchar>0 && ucase>0){
+    document.getElementById("fpass").style.borderColor="grey";
+    check=1;
+  }
+  else{
+    document.getElementById("fpass").style.borderColor="red";
+    fpass.value='';
+    fcpass.value='';
+  }
+}
+if(password!='' && cpassword!='' && check==1){
+  if(password==cpassword){
+    var alien=password+"[s~1]"+cpassword;
+    var inst="Final Password[s~1]Confirm Final Password";
+    $.ajax({url: "insthash.php", type:"POST",
+      data:{fieldvalues:alien,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
+      document.getElementById("fpass").style.borderColor="grey";
+    document.getElementById("fcpass").style.borderColor="grey";
+    fpass.value='';
+    fcpass.value=''; 
+  }
+  else{
+    document.getElementById("fpass").style.borderColor="red";
+    document.getElementById("fcpass").style.borderColor="red";
+  }
+}
+else{
+  document.getElementById("fpass").style.borderColor="red";
+    document.getElementById("fcpass").style.borderColor="red";}}
+function government(){
+  caste=castee.value;
+  sub=subcaste.value;
+  division=division.value;
+  religion=religion.value
+  comm=community.value;
+  if(caste==''){document.getElementById("castee").style.borderColor="red";}
+  if(sub==''){document.getElementById("subcaste").style.borderColor="red";}
+  if(division==''){document.getElementById("division").style.borderColor="red";}
+  if(religion==''){document.getElementById("religion").style.borderColor="red";}
+  if(comm==''){document.getElementById("community").style.borderColor="red";}
+  if(caste!='' && sub!='' && division!='' && religion!='' && comm!=''){
+    var alien=caste+"[s~1]"+sub+"[s~1]"+division+"[s~1]"+religion+"[s~1]"+comm;
+    var inst="Final Password[s~1]Confirm Final Password";
+    $.ajax({url: "insthash.php", type:"POST",
+      data:{fieldvalues:alien,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
+  }
+  // document.getElementById("government").style.display="none";
+}
+function aadhar(){
+  if(resizedImageUrl==''){
+    document.getElementById("display-aadhar").style.borderColor="red";
+  }
+  else if(resizedImageUrl!=''){
+  var image=resizedImageUrl;
+  var inst="Aadhar Card URL";
+  $.ajax({url: "insthash.php", type:"POST",
+      data:{fieldvalues:image,fielddata:inst,id:instinctid,cid:instinctcid,instgame:'melboru'}})
+      document.getElementById("display-aadhar").style.borderColor="grey";
+  alert('instinct');}
 }
 </script>
 <style>
@@ -861,8 +1399,21 @@ function datetotext(){
   border-radius: 13px;
   color: #e1e1e1;
 }
-
 .form_item input[type="number"]:focus{
+  border-color: #6271f0;
+}
+.form_item input[type="password"],
+.form_item select{
+  width: 100%;
+  height: 47px;
+  padding: 11px;
+  font-size: 16px;
+  background-color: #262626;
+  border: 3px solid grey;
+  border-radius: 13px;
+  color: #e1e1e1;
+}
+.form_item input[type="password"]:focus{
   border-color: #6271f0;
 }
 
@@ -887,10 +1438,73 @@ function datetotext(){
   padding: 10px; 
   font-family: 'Montserrat', sans-serif;
 }
+.message-box-title {
+position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.8em 1em 0;
+    color: inherit;
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word;
+    color: #666;
+    font-family:monospace;
+    white-space: nowrap;
+  }
+.message-box-text {
+  font-size: 16px;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.close-button {
+  margin-top: auto;
+  background-color: #4b5cfc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.close-button:hover {
+  background-color: #4b5cfc;
+  transform: scale(1.1);
+}
+
+.close-button:active {
+  transform: scale(0.9);
+}
+.tick-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: -11px;
+}
+.fa-arrow-circle-right:before, .fa-circle-arrow-right:before{
+  color: #f8bb86;
+}
+@media only screen and (max-width: 768px) {
+
+  .message-box-title {
+    font-size: 20px;
+  }
+}
+
 #display-img{
   display: flex;margin-top:-17px;align-items: center;gap: 10px;flex-direction: column;
 }
 #display-image{
+  width: 100%;height: 120px;border-radius: 13px;border: 3px solid grey;background-position: center;background-size: cover;
+}
+#display-aa{
+  display: flex;margin-top:-17px;align-items: center;gap: 10px;flex-direction: column;
+}
+#display-aadhar{
   width: 100%;height: 120px;border-radius: 13px;border: 3px solid grey;background-position: center;background-size: cover;
 }
 #instbtn:hover{
@@ -899,4 +1513,34 @@ function datetotext(){
 ::placeholder {color: white;opacity: 0.9; }
 ::-webkit-calendar-picker-indicator {filter: invert(1);}
 @font-face {font-family: 'Monoton';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/monoton/v15/5h1aiZUrOngCibe4TkHLQg.woff2) format('woff2');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXpsog.woff2) format('woff2');unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw9aXpsog.woff2) format('woff2');unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw2aXpsog.woff2) format('woff2');unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXpsogwoff2) format('woff2');unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2) format('woff2');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+
+.msg-box-wrapper{
+  max-width: 460px;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.msg-box-wrapper .msg-box-form_container{
+  background: white;
+  padding: 30px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  margin-top: -30px;
+}
+.msg-box-heading{
+  background: white;
+  margin: -30px;
+  text-align: center;
+  color: black;
+  font-size: 19px;
+  margin-bottom: 10px;
+  padding: 10px; 
+  font-family: 'Montserrat', sans-serif;
+}
 </style>
