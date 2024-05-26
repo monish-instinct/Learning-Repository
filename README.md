@@ -1,3 +1,15 @@
-Hi there,
+I am Monish, a dedicated Computer Science student with a strong passion for technology and artificial intelligence. My journey in tech is highlighted by several key achievements:
 
-This is InstincT, and I am a young individual with a passion for science, technology, and artificial intelligence. I am proud to say that I achieved first place in a state-level science exhibition during my 11th grade with my project, an automatic Rubik's cube solver using artificial intelligence. In my free time, I enjoy working on my own website, named instinctcms.com, and practicing my coding skills. I have experience with programming languages such as Python, JavaScript, and SQL, as well as frontend coding and basic android and iOS development. I am particularly interested in exploring the possibilities of artificial intelligence and am always looking for ways to learn and grow in this field. I am also excited to share that I have been selected in the first round of Intel interview, which is a great achievement for me. I am dedicated to exploring the possibilities of AI and am always seeking new ways to improve my skills and understanding in this field.
+Hackathon Success: Participated in and won multiple hackathons, showcasing my problem-solving skills and teamwork.
+Academic Excellence: Awarded the Best Outgoing Student from my school, reflecting my dedication and hard work.
+State-Level Science Winner: Achieved first place in a state-level science exhibition with an AI-powered automatic Rubik's cube solver.
+Technical Expertise:
+
+Languages: Proficient in Python, JavaScript, SQL, and C#.
+Development: Experienced in frontend development, basic Android and iOS development, and currently working on Vision OS and VR/AR apps using C# and WPF.
+Projects: Creator of InstinctCMS.com, a platform to showcase my tech projects.
+AI Enthusiasm:
+
+Intel Interview: Selected in the first round of Intel's interview process, underscoring my commitment and potential in AI.
+I am always eager to learn, grow, and explore new opportunities in the tech world. Let's connect and innovate together.
+
