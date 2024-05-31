@@ -25,7 +25,7 @@ I am **Monish**, a dedicated Computer Science student with a profound passion fo
 </div>
 
 - 🌐 **Development**: Experienced in frontend development, basic Android and iOS development, and currently working on Vision OS and VR/AR apps using C# and WPF.
-- 🚀 **Projects**: Creator of [InstinctCMS](http://instinctcms.com), a platform to showcase my tech projects.
+- 💡 **Startup Project**: Check out our [website](http://skynetbee.com) and other tech projects.
 
 
 ## AI Enthusiasm
@@ -34,6 +34,5 @@ I am **Monish**, a dedicated Computer Science student with a profound passion fo
 
 ## Highlights
 
-- 💡 **Startup Project**: Check out our [website](http://skynetbee.com) and other tech projects.
 - ✨ **Contributions**: Actively contributing to open-source projects and communities.
 - 🧠 **Learning**: Constantly exploring new technologies and methodologies in AI and software development.
