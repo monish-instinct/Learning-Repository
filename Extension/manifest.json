@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Reload Extension",
+    "version": "1.0",
+    "description": "Reloads a website at regular intervals.",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "icons": {
+      "48": "icon.png"
+    }
+  }
+  
