@@ -34,6 +34,6 @@ I am **Monish**, a dedicated Computer Science student with a profound passion fo
 
 ## Highlights
 
-- 💡 **Startup Project**: Check out our [SKYNETBEE](http://skynetbee.com) and other tech projects.
+- 💡 **Startup Project**: Check out our [website](http://skynetbee.com) and other tech projects.
 - ✨ **Contributions**: Actively contributing to open-source projects and communities.
 - 🧠 **Learning**: Constantly exploring new technologies and methodologies in AI and software development.
